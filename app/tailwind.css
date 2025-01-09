@@ -4,22 +4,22 @@
 
 @layer base {
   @font-face {
-    font-family: 'Comfortaa';
+    font-family: "Comfortaa";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('./assets/fonts/Comfortaa-Regular.woff2') format('woff2');
+    src: url("./assets/fonts/Comfortaa-Regular.woff2") format("woff2");
   }
 
   @font-face {
-    font-family: 'Comfortaa';
+    font-family: "Comfortaa";
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('./assets/fonts/Comfortaa-Bold.woff2') format('woff2');
+    src: url("./assets/fonts/Comfortaa-Bold.woff2") format("woff2");
   }
 
   body {
-    @apply font-serif text-base text-black leading-5 tracking-tight bg-white;
+    @apply bg-white font-serif text-base leading-5 text-black;
   }
 }
