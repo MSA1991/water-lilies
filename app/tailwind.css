@@ -4,22 +4,49 @@
 
 @layer base {
   @font-face {
-    font-family: "Comfortaa";
+    font-family: 'Philosopher';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("./assets/fonts/Comfortaa-Regular.woff2") format("woff2");
+    src: url('./assets/fonts/Philosopher-Regular.woff2') format('woff2');
   }
 
   @font-face {
-    font-family: "Comfortaa";
+    font-family: 'Philosopher';
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url("./assets/fonts/Comfortaa-Bold.woff2") format("woff2");
+    src: url('./assets/fonts/Philosopher-Bold.woff2') format('woff2');
+  }
+
+  html {
+    scrollbar-gutter: stable;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     @apply bg-white font-serif text-base leading-5 text-black;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-4 bg-white;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-primary;
+  }
+
+  ::selection {
+    @apply bg-yellow text-primary;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-xl font-bold md:text-2xl lg:text-3xl;
+  }
+
+  .icon {
+    @apply h-8 w-8 text-primary transition-colors hover:text-primary-light;
   }
 }
