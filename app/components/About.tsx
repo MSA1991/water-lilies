@@ -4,13 +4,13 @@ import lily from '../assets/images/lily.svg';
 export const About = () => {
   return (
     <section
-      className="bg-secondary-light py-14 md:py-16 lg:py-20"
+      className="section-py bg-secondary-light"
       id={PageSectionsId.About}
     >
       <div className="container relative z-10">
         <h2 className="section-title mb-5 text-center">Про Німфеї</h2>
 
-        <div className="mx-auto max-w-3xl text-center md:text-xl">
+        <div className="mx-auto max-w-screen-lg text-center md:text-xl">
           <p>
             Німфеї, або, як їх ще називаю, водяні лілії - це багаторічні водні
             рослини, які прекрасно почувають себе в штучних водоймах і є

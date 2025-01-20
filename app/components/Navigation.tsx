@@ -22,7 +22,7 @@ export const Navigation = () => {
     const footerHeight = footer?.offsetHeight || 0;
     const windowHeight = window.innerHeight;
 
-    const sectionOffset = -Math.round(windowHeight * 0.3);
+    const sectionOffset = -Math.round(windowHeight * 0.5);
     const footerOffset = Math.min(sectionOffset, footerHeight - windowHeight);
 
     setSectionOffset(sectionOffset);
@@ -43,7 +43,7 @@ export const Navigation = () => {
 
   return (
     <nav className="container fixed inset-x-0 top-4 z-50">
-      <div className="flex items-center justify-between rounded-full border-2 border-secondary bg-secondary/20 px-4 py-2 shadow-xl backdrop-blur-xl md:px-8 md:py-4">
+      <div className="border-box flex items-center justify-between rounded-xl bg-secondary/50 p-2 shadow-2xl backdrop-blur-xl md:p-4">
         <button type="button" className="md:hidden">
           <Bars3Icon className="icon" />
         </button>
@@ -53,6 +53,7 @@ export const Navigation = () => {
           smooth={true}
           spy={true}
           offset={0}
+          duration={300}
           onSetActive={() => handleSetActiveLink(null)}
           className="cursor-pointer"
         >
@@ -78,7 +79,7 @@ export const Navigation = () => {
                   {label}
 
                   <AnimatePresence>
-                    {activeLinkId !== null && (
+                    {activeLinkId && (
                       <m.div
                         initial={{ width: 0 }}
                         animate={{ width: '100%' }}

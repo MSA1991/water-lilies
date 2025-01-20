@@ -46,7 +46,15 @@
     @apply text-xl font-bold md:text-2xl lg:text-3xl;
   }
 
+  .section-py {
+    @apply py-14 md:py-16 lg:py-20;
+  }
+
   .icon {
     @apply h-8 w-8 text-primary transition-colors hover:text-primary-light;
+  }
+
+  .border-box {
+    @apply border-2 border-secondary;
   }
 }
