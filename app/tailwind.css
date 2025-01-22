@@ -46,6 +46,10 @@
     @apply text-xl font-bold md:text-2xl lg:text-3xl;
   }
 
+  .title-mb {
+    @apply mb-5 md:mb-7;
+  }
+
   .section-py {
     @apply py-14 md:py-16 lg:py-20;
   }
@@ -56,5 +60,9 @@
 
   .border-box {
     @apply border-2 border-secondary;
+  }
+
+  .container-sm {
+    @apply mx-auto max-w-screen-lg;
   }
 }

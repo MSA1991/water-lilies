@@ -20,9 +20,9 @@ export const Catalog = ({ products }: Props) => {
         )}
       ></div>
 
-      <h2 className="section-title mb-5 text-center">Каталог квітів</h2>
+      <h2 className="section-title title-mb text-center">Каталог квітів</h2>
 
-      <ul className="mx-auto grid max-w-screen-lg grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <ul className="container-sm grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {products.map((product) => (
           <li key={product.title}>
             <ProductCard product={product} />
