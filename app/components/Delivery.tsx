@@ -5,11 +5,8 @@ import dragonfly from '../assets/images/dragonfly.svg';
 import clsx from 'clsx';
 
 export const Delivery = () => (
-  <section
-    className="section-py bg-secondary-light"
-    id={PageSectionsId.Delivery}
-  >
-    <div className="container relative z-0">
+  <section className="bg-secondary-light" id={PageSectionsId.Delivery}>
+    <div className="section-py container relative z-0">
       <div className="w-full md:w-2/3 lg:w-1/2">
         <h2 className="section-title">Доставка та оплата</h2>
 
@@ -37,7 +34,7 @@ export const Delivery = () => (
         src={dragonfly}
         alt="dragonfly"
         className={clsx(
-          'absolute bottom-0 right-0 -z-10 translate-y-14 opacity-70 md:translate-y-16 lg:translate-y-20',
+          'absolute bottom-0 right-0 -z-10 opacity-50',
           'w-full max-w-96 md:w-3/5 md:max-w-full lg:w-1/2 lg:min-w-[600px]',
         )}
       />

@@ -2,8 +2,8 @@ import { PageSectionsId } from '../types/PageSections';
 import lily from '../assets/images/lily.svg';
 
 export const About = () => (
-  <section className="section-py bg-secondary-light" id={PageSectionsId.About}>
-    <div className="container relative z-0">
+  <section className="bg-secondary-light" id={PageSectionsId.About}>
+    <div className="section-py container relative z-0">
       <h2 className="section-title title-mb text-center">Про Німфеї</h2>
 
       <p className="container-sm text-center md:text-xl">
@@ -22,7 +22,7 @@ export const About = () => (
       <img
         src={lily}
         alt="водяна лілія"
-        className="absolute left-1/2 top-1/2 -z-10 max-w-80 -translate-x-1/2 -translate-y-1/2 opacity-70 lg:max-w-96"
+        className="absolute left-1/2 top-1/2 -z-10 max-w-80 -translate-x-1/2 -translate-y-1/2 opacity-50 lg:max-w-96"
       />
     </div>
   </section>

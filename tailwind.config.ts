@@ -5,7 +5,7 @@ export default {
   theme: {
     colors: {
       primary: '#D95D74',
-      'primary-light': '#de7C8F',
+      'primary-light': '#DE7C8F',
       secondary: '#419EA6',
       'secondary-light': '#BFF2DD',
       white: '#E6FFF3',
