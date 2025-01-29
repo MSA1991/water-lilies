@@ -1,7 +1,7 @@
+import { clsx } from 'clsx';
+import { ProductCard } from './ProductCard';
 import { Product } from '~/types/Product';
 import { PageSectionsId } from '../types/PageSections';
-import { ProductCard } from './ProductCard';
-import clsx from 'clsx';
 
 type Props = {
   products: Product[];

@@ -29,11 +29,11 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-4 bg-white;
+    @apply w-4 bg-primary-light;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-primary;
+    @apply rounded-full border-4 border-solid border-primary-light bg-yellow;
   }
 
   ::selection {
@@ -51,7 +51,11 @@
   }
 
   .section-py {
-    @apply py-14 md:py-16 lg:py-20;
+    @apply py-14 md:py-16 lg:py-24;
+  }
+
+  .button {
+    @apply grid h-11 w-full cursor-pointer place-items-center rounded-lg bg-primary text-base font-bold uppercase tracking-wider text-white shadow-xl transition-all hover:bg-primary-light hover:tracking-widest;
   }
 
   .icon {

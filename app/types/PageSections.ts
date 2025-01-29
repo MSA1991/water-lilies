@@ -7,7 +7,11 @@ export enum PageSectionsId {
   Contacts = 'contacts',
 }
 
+export type NavigationSections = Exclude<PageSectionsId, PageSectionsId.Home>;
+
 export type PageSections = {
-  id: PageSectionsId;
+  id: NavigationSections;
   label: string;
 };
+
+export type SectionLinks = NavigationSections | null;

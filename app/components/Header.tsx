@@ -1,10 +1,13 @@
+import { Link as ScrollLink } from 'react-scroll';
+import { clsx } from 'clsx';
 import { Navigation } from './Navigation';
-import { Button } from './UI/Button';
 import { ParallaxImage } from './ParallaxImage';
+import { useSectionsOffset } from '~/store/sectionsOffset';
 import { PageSectionsId } from '../types/PageSections';
-import clsx from 'clsx';
 
 export const Header = () => {
+  const sectionOffset = useSectionsOffset.use.sectionOffset();
+
   return (
     <header className="relative overflow-hidden" id={PageSectionsId.Home}>
       <div
@@ -15,7 +18,7 @@ export const Header = () => {
       ></div>
       <div
         className={clsx(
-          'absolute right-0 top-0 h-3/5 w-2/4 -translate-y-1/4 translate-x-1/4 rotate-[20deg] rounded-full',
+          'absolute right-0 top-0 -z-10 h-3/5 w-2/4 -translate-y-1/4 translate-x-1/4 rotate-[20deg] rounded-full',
           'bg-gradient-to-r from-secondary-light from-30% to-yellow blur-3xl',
         )}
       ></div>
@@ -30,9 +33,16 @@ export const Header = () => {
             Краса і гармонія для вашої водойми
           </p>
 
-          <div className="w-full max-w-48">
-            <Button type="button" text="замовити" />
-          </div>
+          <ScrollLink
+            to={PageSectionsId.Catalog}
+            smooth={true}
+            offset={sectionOffset}
+            duration={300}
+            isDynamic={true}
+            className="button max-w-48"
+          >
+            замовити
+          </ScrollLink>
         </div>
 
         <ParallaxImage />

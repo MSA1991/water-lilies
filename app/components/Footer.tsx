@@ -1,6 +1,6 @@
-import { PageSectionsId } from '../types/PageSections';
+import { clsx } from 'clsx';
 import { WORK_HOURS } from '~/data/workHours';
-import clsx from 'clsx';
+import { PageSectionsId } from '../types/PageSections';
 import frog from '../assets/images/frog.svg';
 
 export const Footer = () => (
@@ -9,18 +9,19 @@ export const Footer = () => (
       <img
         src={frog}
         alt="frog"
+        loading="lazy"
         className={clsx(
-          'absolute bottom-0 right-0 -z-10 w-1/2 min-w-64 max-w-lg scale-x-[-1] opacity-70',
+          'absolute bottom-0 right-0 -z-10 w-1/2 min-w-64 max-w-lg scale-x-[-1] opacity-40',
           'md:left-0 md:w-2/5 md:min-w-96 md:scale-x-[1]',
         )}
       />
 
-      <div className="w-full text-lg font-bold sm:w-2/3 md:w-1/2 md:text-xl lg:text-2xl">
-        <h2 className="section-title title-mb">Контакти</h2>
+      <div className="flex w-full flex-col gap-5 text-lg font-bold sm:w-2/3 md:w-1/2 md:gap-7 md:text-xl lg:text-2xl">
+        <h2 className="section-title">Контакти</h2>
 
-        <div className="flex flex-col gap-5 md:gap-7">
+        <div>
           <div>
-            Tелефон:{' '}
+            Телефон:{' '}
             <a
               href="tel:+380666915982"
               className="text-primary transition-colors hover:text-primary-light"
@@ -29,7 +30,7 @@ export const Footer = () => (
             </a>
           </div>
 
-          <div>
+          <div className="mt-2">
             Email:{' '}
             <a
               href="mailto:water.lilies.ua@gmail.com"
@@ -38,18 +39,18 @@ export const Footer = () => (
               water.lilies.ua@gmail.com
             </a>
           </div>
+        </div>
 
-          <div>
-            Графік роботи:
-            <ul className="mt-2 text-base lg:text-xl">
-              {WORK_HOURS.map(({ day, hours }) => (
-                <li key={day} className="grid w-full grid-cols-2">
-                  <div>{day}:</div>
-                  <div>{hours}</div>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div>
+          Графік роботи:
+          <ul className="mt-2 text-base lg:text-xl">
+            {WORK_HOURS.map(({ day, hours }) => (
+              <li key={day} className="grid w-full grid-cols-2">
+                <div>{day}:</div>
+                <div>{hours}</div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

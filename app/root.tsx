@@ -5,6 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import { NotFound } from './components/NotFound';
 
 import './tailwind.css';
 
@@ -28,4 +29,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return <Outlet />;
+}
+
+export function ErrorBoundary() {
+  return <NotFound />;
 }

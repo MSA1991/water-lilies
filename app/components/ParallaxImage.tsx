@@ -1,9 +1,9 @@
 import {
   MouseParallaxContainer,
   MouseParallaxChild,
-} from "react-parallax-mouse";
-import flower from "../assets/images/flower.webp";
-import leaf from "../assets/images/leaf.webp";
+} from 'react-parallax-mouse';
+import flower from '../assets/images/flower.webp';
+import leaf from '../assets/images/leaf.webp';
 
 export const ParallaxImage = () => (
   <MouseParallaxContainer
@@ -16,11 +16,11 @@ export const ParallaxImage = () => (
       factorY={0.5}
       className="absolute left-0 top-0 z-10"
     >
-      <img src={flower} alt="water lily flower" />
+      <img src={flower} alt="water lily flower" loading="lazy" />
     </MouseParallaxChild>
 
     <MouseParallaxChild factorX={0.5} factorY={0.7}>
-      <img src={leaf} alt="water lily leaf" />
+      <img src={leaf} alt="water lily leaf" loading="lazy" />
     </MouseParallaxChild>
   </MouseParallaxContainer>
 );

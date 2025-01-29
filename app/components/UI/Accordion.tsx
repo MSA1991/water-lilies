@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'motion/react';
 import * as m from 'motion/react-client';
+import { clsx } from 'clsx';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import clsx from 'clsx';
 
 type Props = {
   question: string;

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { PageSectionsId } from '../types/PageSections';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { Accordion } from './UI/Accordion';
 import { FAQ } from '~/data/faq';
+import { PageSectionsId } from '../types/PageSections';
 
 export const Faq = () => {
   const [openQuestionId, setOpenQuestionId] = useState<number | null>(null);
