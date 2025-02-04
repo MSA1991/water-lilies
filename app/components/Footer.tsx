@@ -4,7 +4,7 @@ import { PageSectionsId } from '../types/PageSections';
 import frog from '../assets/images/frog.svg';
 
 export const Footer = () => (
-  <footer className="bg-secondary-light" id={PageSectionsId.Contacts}>
+  <footer className="section-bg" id={PageSectionsId.Contacts}>
     <div className="section-py container relative z-0 flex md:justify-end">
       <img
         src={frog}

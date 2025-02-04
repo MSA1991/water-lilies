@@ -12,3 +12,9 @@ export type Product = {
   plantingDepth: string;
   variants: ProductVariants[];
 };
+
+export type CartProduct = Pick<Product, 'title' | 'image'> & {
+  id: string;
+  variant: ProductVariants;
+  quantity: number;
+};

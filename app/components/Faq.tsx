@@ -20,13 +20,13 @@ export const Faq = () => {
           'absolute bottom-0 right-0 aspect-square h-full w-1/3 min-w-56 translate-x-1/4 translate-y-1/4 -rotate-12 rounded-full',
           '-z-10 bg-gradient-to-r from-secondary-light from-30% to-yellow blur-3xl',
         )}
-      ></div>
+      />
       <div
         className={clsx(
           'absolute left-0 top-0 -z-10 aspect-video w-1/3 min-w-56 rounded-full',
           '-translate-x-1/4 translate-y-1/3 bg-secondary-light blur-3xl',
         )}
-      ></div>
+      />
 
       <div className="section-py container">
         <h2 className="section-title title-mb text-center">Часті запитання</h2>

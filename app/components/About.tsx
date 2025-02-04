@@ -2,7 +2,7 @@ import { PageSectionsId } from '../types/PageSections';
 import lily from '../assets/images/lily.svg';
 
 export const About = () => (
-  <section className="bg-secondary-light" id={PageSectionsId.About}>
+  <section className="section-bg" id={PageSectionsId.About}>
     <div className="section-py container relative z-0">
       <h2 className="section-title title-mb text-center">Про Німфеї</h2>
 

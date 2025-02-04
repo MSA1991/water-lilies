@@ -6,9 +6,10 @@ import { Product, ProductVariants } from '~/types/Product';
 
 type Props = {
   product: Product;
+  onAddToCart: (product: Product, variant: ProductVariants) => void;
 };
 
-export const ProductCard = ({ product }: Props) => {
+export const ProductCard = ({ product, onAddToCart }: Props) => {
   const { image, title, flowerDiameter, plantingDepth, variants } = product;
   const [activeVariant, setActiveVariant] = useState(variants[0]);
   const { size, discount, price, inStock } = activeVariant;
@@ -27,7 +28,9 @@ export const ProductCard = ({ product }: Props) => {
       />
 
       <div className="flex flex-col justify-between gap-4 p-2">
-        <h3 className="line-clamp-2 h-14 text-xl font-bold">{title}</h3>
+        <h3 className="line-clamp-2 h-12 text-lg font-bold leading-6">
+          {title}
+        </h3>
 
         <div className="[&>div>span]:font-bold">
           <div>
@@ -62,8 +65,10 @@ export const ProductCard = ({ product }: Props) => {
         <Price price={price} discount={discount} />
 
         <Button
+          type="button"
           disabled={!inStock}
           text={inStock ? 'в кошик' : 'закінчилися'}
+          onClick={() => onAddToCart(product, activeVariant)}
         />
       </div>
     </article>

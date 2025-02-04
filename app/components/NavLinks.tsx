@@ -15,7 +15,7 @@ export const NavLinks = ({ activeLinkId, onChangeActiveLink }: Props) => {
   const footerOffset = useSectionsOffset.use.footerOffset();
 
   return (
-    <ul className="hidden gap-6 md:flex">
+    <ul className="flex gap-7">
       {PAGE_SECTIONS.map(({ id, label }) => {
         const isFooter = PageSectionsId.Contacts === id;
         const currentOffset = isFooter ? footerOffset : sectionOffset;
@@ -30,7 +30,7 @@ export const NavLinks = ({ activeLinkId, onChangeActiveLink }: Props) => {
               duration={300}
               isDynamic={true}
               onSetActive={() => onChangeActiveLink(id)}
-              className="relative cursor-pointer text-xl font-bold drop-shadow-[0px_0px_5px_#FFE478] transition-colors hover:text-primary"
+              className="relative cursor-pointer text-xl font-bold drop-shadow-[0px_0px_5px_#FFF] transition-colors hover:text-primary"
             >
               {label}
 

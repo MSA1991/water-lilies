@@ -1,12 +1,14 @@
 import { useCallback, useEffect } from 'react';
 import type { HeadersFunction, MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
+import { Navigation } from '~/components/Navigation';
 import { Header } from '~/components/Header';
 import { About } from '~/components/About';
 import { Catalog } from '~/components/Catalog';
 import { Delivery } from '~/components/Delivery';
 import { Faq } from '~/components/Faq';
 import { Footer } from '~/components/Footer';
+import { Cart } from '~/components/Cart';
 import { getProducts } from '~/contentful';
 import { useSectionsOffset } from '~/store/sectionsOffset';
 import { useDebounce } from '~/hooks/useDebounce';
@@ -25,7 +27,7 @@ export const headers: HeadersFunction = () => ({
 
 export const loader = async () => getProducts();
 
-const SCROLL_OFFSET_RATIO = 0.3;
+const SCROLL_OFFSET_RATIO = 0.25;
 
 export default function Index() {
   const products = useLoaderData<typeof loader>();
@@ -61,12 +63,14 @@ export default function Index() {
 
   return (
     <>
+      <Navigation />
       <Header />
       <About />
       <Catalog products={products} />
       <Delivery />
       <Faq />
       <Footer />
+      <Cart />
     </>
   );
 }

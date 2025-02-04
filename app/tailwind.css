@@ -42,6 +42,10 @@
 }
 
 @layer components {
+  .scroll-hidden {
+    scrollbar-width: none;
+  }
+
   .section-title {
     @apply text-xl font-bold md:text-2xl lg:text-3xl;
   }
@@ -50,12 +54,20 @@
     @apply mb-5 md:mb-7;
   }
 
+  .section-bg {
+    @apply bg-secondary-light ring-2 ring-secondary;
+  }
+
   .section-py {
     @apply py-14 md:py-16 lg:py-24;
   }
 
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
   .button {
-    @apply grid h-11 w-full cursor-pointer place-items-center rounded-lg bg-primary text-base font-bold uppercase tracking-wider text-white shadow-xl transition-all hover:bg-primary-light hover:tracking-widest;
+    @apply flex-center h-11 w-full cursor-pointer rounded-lg bg-primary text-base font-bold uppercase tracking-wider text-white shadow-xl transition-all hover:bg-primary-light hover:tracking-widest;
   }
 
   .icon {

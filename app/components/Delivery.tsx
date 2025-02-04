@@ -8,7 +8,7 @@ export const Delivery = () => {
   const footerOffset = useSectionsOffset.use.footerOffset();
 
   return (
-    <section className="bg-secondary-light" id={PageSectionsId.Delivery}>
+    <section className="section-bg" id={PageSectionsId.Delivery}>
       <div className="section-py container relative z-0">
         <div className="w-full md:w-2/3 lg:w-1/2">
           <h2 className="section-title">Доставка та оплата</h2>
