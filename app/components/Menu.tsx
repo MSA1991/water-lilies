@@ -10,7 +10,7 @@ import { PageSectionsId } from '~/types/PageSections';
 
 type Props = {
   isOpen: boolean;
-  toggleIsOpen: () => void;
+  onClose: () => void;
 };
 
 const menuVariants = {
@@ -23,7 +23,7 @@ const linkVariants = {
   hidden: { opacity: 0, x: -100 },
 };
 
-export const Menu = ({ isOpen, toggleIsOpen }: Props) => {
+export const Menu = ({ isOpen, onClose }: Props) => {
   const sectionOffset = useSectionsOffset.use.sectionOffset();
   const footerOffset = useSectionsOffset.use.footerOffset();
 
@@ -42,7 +42,7 @@ export const Menu = ({ isOpen, toggleIsOpen }: Props) => {
           <button
             type="button"
             className="absolute right-2 top-2 sm:right-4 sm:top-4"
-            onClick={toggleIsOpen}
+            onClick={onClose}
           >
             <XMarkIcon className="icon" />
           </button>
@@ -65,7 +65,7 @@ export const Menu = ({ isOpen, toggleIsOpen }: Props) => {
                     smooth={true}
                     offset={currentOffset}
                     duration={300}
-                    onClick={toggleIsOpen}
+                    onClick={onClose}
                     className="cursor-pointer text-2xl font-bold transition-colors hover:text-primary"
                   >
                     {label}
@@ -85,7 +85,7 @@ export const Menu = ({ isOpen, toggleIsOpen }: Props) => {
         <div className="absolute -left-12 top-0 h-full w-14 bg-white" />
       </m.aside>
 
-      <Overlay isVisible={isOpen} toggleIsVisible={toggleIsOpen} />
+      <Overlay isOpen={isOpen} onClose={onClose} />
     </div>
   );
 };

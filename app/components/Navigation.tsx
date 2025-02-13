@@ -13,11 +13,15 @@ import { PageSectionsId, SectionLinks } from '../types/PageSections';
 export const Navigation = () => {
   const [activeLinkId, setActiveLinkId] = useState<SectionLinks>(null);
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
-  const toggleIsOpenCart = useCart.use.toggleIsOpen();
+  const openCart = useCart.use.openCart();
   const productsCart = useCart.use.products();
 
-  const handleToggleIsOpenMenu = () => {
-    setIsOpenMenu((_isOpenMenu) => !_isOpenMenu);
+  const handleOpenMenu = () => {
+    setIsOpenMenu(true);
+  };
+
+  const handleCloseMenu = () => {
+    setIsOpenMenu(false);
   };
 
   const onChangeActiveLink = (id: SectionLinks) => {
@@ -32,11 +36,7 @@ export const Navigation = () => {
     <>
       <nav className="container sticky inset-x-0 top-4 z-30 -mt-14 h-14 md:-mt-[72px] md:h-[72px]">
         <div className="border-box flex h-full items-center justify-between rounded-xl bg-secondary/50 p-2 px-2.5 shadow-2xl backdrop-blur-xl md:p-4">
-          <button
-            type="button"
-            className="md:hidden"
-            onClick={handleToggleIsOpenMenu}
-          >
+          <button type="button" className="md:hidden" onClick={handleOpenMenu}>
             <Bars3Icon className="icon" />
           </button>
 
@@ -61,8 +61,8 @@ export const Navigation = () => {
           </div>
 
           <div className="relative">
-            <button type="button" className="block" onClick={toggleIsOpenCart}>
-              <ShoppingBagIcon className="icon" />
+            <button type="button" className="block" onClick={openCart}>
+              <ShoppingBagIcon className="icon drop-shadow-[0px_0px_5px_#FFF]" />
             </button>
 
             <AnimatePresence>
@@ -85,7 +85,7 @@ export const Navigation = () => {
         </div>
       </nav>
 
-      <Menu isOpen={isOpenMenu} toggleIsOpen={handleToggleIsOpenMenu} />
+      <Menu isOpen={isOpenMenu} onClose={handleCloseMenu} />
     </>
   );
 };

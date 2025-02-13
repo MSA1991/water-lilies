@@ -1,4 +1,3 @@
-import { AnimatePresence } from 'motion/react';
 import * as m from 'motion/react-client';
 import { clsx } from 'clsx';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
@@ -7,6 +6,11 @@ type Props = {
   question: string;
   answer: string;
   isOpen: boolean;
+};
+
+const variants = {
+  open: { opacity: 1, height: 'auto' },
+  closed: { opacity: 0, height: 0 },
 };
 
 export const Accordion = ({ question, answer, isOpen }: Props) => (
@@ -21,20 +25,14 @@ export const Accordion = ({ question, answer, isOpen }: Props) => (
       />
     </div>
 
-    <AnimatePresence>
-      {isOpen && (
-        <m.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="overflow-hidden"
-        >
-          <p className="whitespace-pre-wrap pt-4 text-left lg:text-xl">
-            {answer}
-          </p>
-        </m.div>
-      )}
-    </AnimatePresence>
+    <m.div
+      initial={false}
+      variants={variants}
+      animate={isOpen ? 'open' : 'closed'}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      className="overflow-hidden"
+    >
+      <p className="whitespace-pre-wrap pt-4 text-left lg:text-xl">{answer}</p>
+    </m.div>
   </div>
 );

@@ -1,6 +1,10 @@
 import { useCallback, useEffect } from 'react';
-import type { HeadersFunction, MetaFunction } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import type {
+  ActionFunctionArgs,
+  HeadersFunction,
+  MetaFunction,
+} from '@remix-run/node';
+import { data, useLoaderData } from '@remix-run/react';
 import { Navigation } from '~/components/Navigation';
 import { Header } from '~/components/Header';
 import { About } from '~/components/About';
@@ -9,10 +13,13 @@ import { Delivery } from '~/components/Delivery';
 import { Faq } from '~/components/Faq';
 import { Footer } from '~/components/Footer';
 import { Cart } from '~/components/Cart';
-import { getProducts } from '~/contentful';
+import { getProducts } from '~/services/contentful';
 import { useSectionsOffset } from '~/store/sectionsOffset';
 import { useDebounce } from '~/hooks/useDebounce';
+import { getFormErrors } from '~/helpers/getFormErrors';
+import { createFormData } from '~/helpers/createFormData';
 import { PageSectionsId } from '~/types/PageSections';
+import { OrderFormData } from '~/types/OrderFormData';
 
 export const meta: MetaFunction = () => {
   return [
@@ -26,6 +33,19 @@ export const headers: HeadersFunction = () => ({
 });
 
 export const loader = async () => getProducts();
+
+export async function action({ request }: ActionFunctionArgs) {
+  const formData = await request.formData();
+  const orderFormData: OrderFormData = createFormData(formData);
+
+  const errors = getFormErrors(orderFormData);
+
+  if (Object.keys(errors).length) {
+    return data({ errors, success: false }, { status: 400 });
+  }
+
+  return data({ success: true });
+}
 
 const SCROLL_OFFSET_RATIO = 0.25;
 

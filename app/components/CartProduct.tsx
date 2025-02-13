@@ -67,7 +67,7 @@ export const CartProduct = memo(({ product }: Props) => {
         className="absolute right-2 top-1"
         onClick={() => removeProduct(id)}
       >
-        <XMarkIcon className="icon h-6 w-6 stroke-2" />
+        <XMarkIcon className="icon h-6 w-6" />
       </button>
     </article>
   );

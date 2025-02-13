@@ -5,7 +5,8 @@ import { CartProduct } from '~/types/Product';
 
 type CartStore = {
   isOpen: boolean;
-  toggleIsOpen: () => void;
+  openCart: () => void;
+  closeCart: () => void;
   products: CartProduct[];
   addProduct: (product: CartProduct) => void;
   removeProduct: (title: string) => void;
@@ -17,7 +18,8 @@ const cartStore = create<CartStore>()(
   persist(
     (set) => ({
       isOpen: false,
-      toggleIsOpen: () => set((state) => ({ isOpen: !state.isOpen })),
+      openCart: () => set({ isOpen: true }),
+      closeCart: () => set({ isOpen: false }),
 
       products: [],
 

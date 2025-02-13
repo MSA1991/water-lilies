@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import * as m from 'motion/react-client';
-import { AnimatePresence } from 'motion/react';
 import { clsx } from 'clsx';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import { CartProduct } from './CartProduct';
 import { Overlay } from './Overlay';
 import { Button } from './UI/Button';
+import { CartProductList } from './CartProductList';
+import { OrderModal } from './OrderModal';
 import { useCart } from '~/store/cart';
 import { useLockScroll } from '~/hooks/useLockScroll';
+import { getTotalPrice } from '~/helpers/getTotalPrice';
 import emptyCart from '../assets/images/empty-cart.svg';
 
 const variants = {
@@ -15,37 +17,45 @@ const variants = {
 };
 
 export const Cart = () => {
-  const isOpenCart = useCart.use.isOpen();
-  const toggleIsOpenCart = useCart.use.toggleIsOpen();
+  const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
+  const isCartOpen = useCart.use.isOpen();
+  const closeCart = useCart.use.closeCart();
   const productsCart = useCart.use.products();
 
-  useLockScroll(isOpenCart);
+  const handleOpenOrderModal = () => {
+    closeCart();
+    setIsOrderModalOpen(true);
+  };
 
-  const totalPrice = productsCart.reduce(
-    (sum, { quantity, variant: { price, discount } }) =>
-      sum + (price - discount) * quantity,
-    0,
-  );
+  const handleCloseOrderModal = () => {
+    setIsOrderModalOpen(false);
+  };
+
+  useLockScroll(isCartOpen || isOrderModalOpen);
+
+  const totalPrice = getTotalPrice(productsCart);
 
   return (
     <>
       <m.div
         initial={false}
         variants={variants}
-        animate={isOpenCart ? 'open' : 'closed'}
+        animate={isCartOpen ? 'open' : 'closed'}
         transition={{ type: 'spring', damping: 12 }}
         className={clsx(
           'fixed right-0 top-0 z-50 h-full min-h-screen bg-white p-2 sm:p-4',
           'flex w-full flex-col gap-7 sm:max-w-[500px]',
         )}
       >
-        <div className="flex">
-          <button onClick={toggleIsOpenCart}>
-            <ArrowRightIcon className="icon stroke-2" />
-          </button>
+        <h2 className="section-title text-center">Ваш кошик</h2>
 
-          <h2 className="section-title grow text-center">Ваш кошик</h2>
-        </div>
+        <button
+          type="button"
+          onClick={closeCart}
+          className="absolute left-2 top-2 sm:left-4 sm:top-4"
+        >
+          <ArrowRightIcon className="icon" />
+        </button>
 
         {!productsCart.length ? (
           <div className="flex-center grow flex-col">
@@ -54,30 +64,23 @@ export const Cart = () => {
           </div>
         ) : (
           <div className="scroll-hidden flex grow flex-col gap-5 overflow-y-auto">
-            <ul className="flex grow flex-col">
-              <AnimatePresence>
-                {productsCart.map((product) => (
-                  <m.li
-                    key={product.id}
-                    exit={{ opacity: 0, height: 0, x: '100%' }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  >
-                    <div className="pb-2">
-                      <CartProduct product={product} />
-                    </div>
-                  </m.li>
-                ))}
-              </AnimatePresence>
-            </ul>
+            <CartProductList products={productsCart} />
 
             <div className="flex flex-col gap-4">
-              <div className="text-2xl font-bold">
-                До сплати: {totalPrice} грн
-              </div>
-
               <div className="h-1 w-full rounded-full bg-secondary" />
 
-              <Button type="button" text="замовити" />
+              <div>
+                <div className="text-2xl font-bold">
+                  До сплати: {totalPrice} грн
+                </div>
+                <div>+ вартість доставки за тарифом перевізника</div>
+              </div>
+
+              <Button
+                type="button"
+                text="Оформити замовлення"
+                onClick={handleOpenOrderModal}
+              />
             </div>
           </div>
         )}
@@ -92,7 +95,9 @@ export const Cart = () => {
         />
       </m.div>
 
-      <Overlay isVisible={isOpenCart} toggleIsVisible={toggleIsOpenCart} />
+      <Overlay isOpen={isCartOpen || isOrderModalOpen} onClose={closeCart} />
+
+      <OrderModal isOpen={isOrderModalOpen} onClose={handleCloseOrderModal} />
     </>
   );
 };

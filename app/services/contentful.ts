@@ -1,5 +1,5 @@
 import { Asset, createClient, EntryFieldTypes } from 'contentful';
-import { Product, ProductVariants } from './types/Product';
+import { Product, ProductVariants } from '../types/Product';
 
 const SPACE_ID = process.env.CONTENTFUL_SPACE_ID as string;
 const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN as string;
