@@ -20,11 +20,19 @@ import { getFormErrors } from '~/helpers/getFormErrors';
 import { createFormData } from '~/helpers/createFormData';
 import { PageSectionsId } from '~/types/PageSections';
 import { OrderFormData } from '~/types/OrderFormData';
+import { sendMessage } from '~/services/telegram';
 
 export const meta: MetaFunction = () => {
   return [
-    { title: 'New Remix App' },
-    { name: 'description', content: 'Welcome to Remix!' },
+    {
+      title:
+        'Купить німфеї (водяні лілії, латаття) для водойми | Різноманіття сортів, доставка по всій Україні',
+    },
+    {
+      name: 'description',
+      content:
+        'Купить німфеї (водяні лілії, латаття) рослини для вашої водойми! Різноманіття сортів, кращі ціни та швидка відправка по всій Україні «Новою Поштою»',
+    },
   ];
 };
 
@@ -41,8 +49,17 @@ export async function action({ request }: ActionFunctionArgs) {
   const errors = getFormErrors(orderFormData);
 
   if (Object.keys(errors).length) {
-    return data({ errors, success: false }, { status: 400 });
+    return data({ errors }, { status: 400 });
   }
+
+  const isMessageSent = await sendMessage(orderFormData);
+
+  if (!isMessageSent)
+    return data({
+      errors: {
+        sendMessage: 'Не вдалося надіслати повідомлення, спробуйте пізніше',
+      },
+    });
 
   return data({ success: true });
 }

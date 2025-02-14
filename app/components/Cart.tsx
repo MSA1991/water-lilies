@@ -3,7 +3,7 @@ import * as m from 'motion/react-client';
 import { clsx } from 'clsx';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { Overlay } from './Overlay';
-import { Button } from './UI/Button';
+import { Button } from './Button';
 import { CartProductList } from './CartProductList';
 import { OrderModal } from './OrderModal';
 import { useCart } from '~/store/cart';

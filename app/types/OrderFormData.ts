@@ -10,6 +10,13 @@ export type OrderFormData = {
 };
 
 export type OrderFormResponse = {
-  success: boolean;
-  errors?: Record<string, string>;
+  success?: boolean;
+  errors?: {
+    firstName?: string;
+    lastName?: string;
+    phone?: string;
+    city?: string;
+    warehouse?: string;
+    sendMessage?: string;
+  };
 };

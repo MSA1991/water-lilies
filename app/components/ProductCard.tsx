@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
-import { Button } from './UI/Button';
-import { Price } from './Price';
+import { Button } from './Button';
 import { Product, ProductVariants } from '~/types/Product';
 
 type Props = {
@@ -62,7 +61,19 @@ export const ProductCard = ({ product, onAddToCart }: Props) => {
           ))}
         </ul>
 
-        <Price price={price} discount={discount} />
+        <div className="flex gap-1.5 text-xl font-bold">
+          Ціна:{' '}
+          {discount > 0 ? (
+            <div>
+              {price - discount} грн
+              <span className="ml-1.5 line-through opacity-50">
+                {price} грн
+              </span>
+            </div>
+          ) : (
+            <div>{price} грн</div>
+          )}
+        </div>
 
         <Button
           type="button"

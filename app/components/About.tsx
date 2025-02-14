@@ -6,7 +6,7 @@ export const About = () => (
     <div className="section-py container relative z-0">
       <h2 className="section-title title-mb text-center">Про Німфеї</h2>
 
-      <p className="container-sm text-center md:text-xl">
+      <p className="container-sm text-center font-bold md:text-xl">
         Німфеї, або як їх ще називаю «водяні лілії» - це багаторічні водні
         рослини, які прекрасно почувають себе в штучних водоймах і є справжніми
         королевами ставків. Кожна квітка, коли цвіте, тримається на поверхні

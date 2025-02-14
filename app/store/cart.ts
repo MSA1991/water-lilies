@@ -8,6 +8,7 @@ type CartStore = {
   openCart: () => void;
   closeCart: () => void;
   products: CartProduct[];
+  clearCart: () => void;
   addProduct: (product: CartProduct) => void;
   removeProduct: (title: string) => void;
   increaseQuantity: (title: string) => void;
@@ -22,6 +23,7 @@ const cartStore = create<CartStore>()(
       closeCart: () => set({ isOpen: false }),
 
       products: [],
+      clearCart: () => set({ products: [] }),
 
       addProduct: (product) =>
         set((state) => ({

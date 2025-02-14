@@ -3,14 +3,16 @@ import { Form, useActionData, useNavigation } from '@remix-run/react';
 import InputMask from '@mona-health/react-input-mask';
 import { SearchCities } from './SearchCities';
 import { SearchWarehouses } from './SearchWarehouses';
-import { Button } from './UI/Button';
+import { Button } from './Button';
 import { useCart } from '~/store/cart';
 import { OrderFormResponse } from '~/types/OrderFormData';
 
 export const OrderForm = () => {
   const actionData = useActionData<OrderFormResponse>();
+
   const navigation = useNavigation();
   const isLoading = navigation.state === 'submitting';
+
   const [searchedCityRef, setSearchedCityRef] = useState<string>('');
   const productsCart = useCart.use.products();
 
