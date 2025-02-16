@@ -13,7 +13,7 @@ export const Delivery = () => {
         <div className="w-full md:w-2/3 lg:w-1/2">
           <h2 className="section-title">Доставка та оплата</h2>
 
-          <p className="my-5 md:my-7 md:text-xl">
+          <p className="my-5 font-bold md:my-7 md:text-xl">
             Ми працюємо тільки по передоплаті, оскільки рослини потребують
             особливого догляду і можуть витримати транспортування лише в одному
             напрямку. Доставка здійснюється «Новою Поштою» по всій Україні.

@@ -43,7 +43,7 @@ export const Cart = () => {
         animate={isCartOpen ? 'open' : 'closed'}
         transition={{ type: 'spring', damping: 12 }}
         className={clsx(
-          'fixed right-0 top-0 z-50 h-full min-h-screen bg-white p-2 sm:p-4',
+          'fixed right-0 top-0 z-50 h-full min-h-screen bg-white p-2 pb-16 sm:p-4',
           'flex w-full flex-col gap-7 sm:max-w-[500px]',
         )}
       >

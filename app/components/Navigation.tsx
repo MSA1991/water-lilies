@@ -36,7 +36,12 @@ export const Navigation = () => {
     <>
       <nav className="container sticky inset-x-0 top-4 z-30 -mt-14 h-14 md:-mt-[72px] md:h-[72px]">
         <div className="border-box flex h-full items-center justify-between rounded-xl bg-secondary/50 p-2 px-2.5 shadow-2xl backdrop-blur-xl md:p-4">
-          <button type="button" className="md:hidden" onClick={handleOpenMenu}>
+          <button
+            aria-label="відкрити меню"
+            type="button"
+            className="md:hidden"
+            onClick={handleOpenMenu}
+          >
             <Bars3Icon className="icon" />
           </button>
 
@@ -61,7 +66,12 @@ export const Navigation = () => {
           </div>
 
           <div className="relative">
-            <button type="button" className="block" onClick={openCart}>
+            <button
+              aria-label="відкрити кошик"
+              type="button"
+              className="block"
+              onClick={openCart}
+            >
               <ShoppingBagIcon className="icon drop-shadow-[0px_0px_5px_#FFF]" />
             </button>
 

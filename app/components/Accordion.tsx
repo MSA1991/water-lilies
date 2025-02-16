@@ -16,7 +16,7 @@ const variants = {
 export const Accordion = ({ question, answer, isOpen }: Props) => (
   <div className="border-box rounded-xl bg-secondary-light/50 p-4">
     <div className="flex items-center justify-between">
-      <h4 className="text-lg font-bold lg:text-2xl">{question}</h4>
+      <div className="text-lg font-bold lg:text-2xl">{question}</div>
 
       <ChevronDownIcon
         className={clsx('icon transition-transform', {

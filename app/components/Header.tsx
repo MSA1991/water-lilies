@@ -1,6 +1,6 @@
 import { Link as ScrollLink } from 'react-scroll';
+import * as m from 'motion/react-client';
 import { clsx } from 'clsx';
-
 import { ParallaxImage } from './ParallaxImage';
 import { useSectionsOffset } from '~/store/sectionsOffset';
 import { PageSectionsId } from '../types/PageSections';
@@ -25,22 +25,41 @@ export const Header = () => {
 
       <div className="container mb-14 mt-24 flex flex-col-reverse items-center md:mb-16 md:mt-36 md:flex-row lg:mb-32 lg:mt-48">
         <div className="flex flex-col items-center gap-4 md:items-start md:gap-8 lg:gap-10">
-          <h1 className="text-6xl font-bold md:text-8xl lg:text-9xl">Німфеї</h1>
-
-          <p className="section-title text-center md:text-left">
-            Краса і гармонія для вашої водойми
-          </p>
-
-          <ScrollLink
-            to={PageSectionsId.Catalog}
-            smooth={true}
-            offset={sectionOffset}
-            duration={300}
-            isDynamic={true}
-            className="button max-w-48"
+          <m.h1
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: 'spring', damping: 12 }}
+            className="text-6xl font-bold md:text-8xl lg:text-9xl"
           >
-            замовити
-          </ScrollLink>
+            Німфеї
+          </m.h1>
+
+          <m.p
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ type: 'spring', damping: 12, delay: 0.3 }}
+            className="section-title text-center md:text-left"
+          >
+            Краса і гармонія для вашої водойми
+          </m.p>
+
+          <m.div
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: 'spring', damping: 12, delay: 0.6 }}
+            className="w-full max-w-48"
+          >
+            <ScrollLink
+              to={PageSectionsId.Catalog}
+              smooth={true}
+              offset={sectionOffset}
+              duration={300}
+              isDynamic={true}
+              className="button"
+            >
+              замовити
+            </ScrollLink>
+          </m.div>
         </div>
 
         <ParallaxImage />
