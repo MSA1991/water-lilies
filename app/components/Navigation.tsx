@@ -42,7 +42,7 @@ export const Navigation = () => {
             className="md:hidden"
             onClick={handleOpenMenu}
           >
-            <Bars3Icon className="icon" />
+            <Bars3Icon className="icon drop-shadow-[0px_0px_5px_#FFF]" />
           </button>
 
           <ScrollLink
