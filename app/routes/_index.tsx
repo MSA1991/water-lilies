@@ -13,26 +13,48 @@ import { Delivery } from '~/components/Delivery';
 import { Faq } from '~/components/Faq';
 import { Footer } from '~/components/Footer';
 import { Cart } from '~/components/Cart';
-import { getProducts } from '~/services/contentful';
 import { useSectionsOffset } from '~/store/sectionsOffset';
-import { useDebounce } from '~/hooks/useDebounce';
+import { getProducts } from '~/services/contentful';
+import { sendMessage } from '~/services/telegram';
 import { getFormErrors } from '~/helpers/getFormErrors';
 import { createFormData } from '~/helpers/createFormData';
+import { useDebounce } from '~/hooks/useDebounce';
 import { PageSectionsId } from '~/types/PageSections';
 import { OrderFormData } from '~/types/OrderFormData';
-import { sendMessage } from '~/services/telegram';
 
 export const meta: MetaFunction = () => {
   return [
     {
       title:
-        'Купить німфеї (водяні лілії, латаття) для водойми | Різноманіття сортів, доставка по всій Україні',
+        'Купити німфеї (водяні лілії, латаття) для вашого ставка! Різноманіття сортів, доставка по всій Україні',
     },
     {
       name: 'description',
       content:
-        'Купить німфеї (водяні лілії, латаття, кувшинки) рослини для вашої водойми! Різноманіття сортів, кращі ціни та швидка відправка по всій Україні «Новою Поштою»',
+        'Купити німфеї, водяні лілії, латаття, кувшинки, рослини для водойм! Різноманіття сортів, кращі ціни та швидка відправка по всій Україні «Новою Поштою»',
     },
+    {
+      property: 'og:title',
+      content:
+        'Купити німфеї (водяні лілії, латаття) для вашого ставка! Різноманіття сортів, доставка по всій Україні',
+    },
+    {
+      property: 'og:description',
+      content:
+        'Купити німфеї, водяні лілії, латаття, кувшинки, рослини для водойм! Різноманіття сортів, кращі ціни та швидка відправка по всій Україні «Новою Поштою»',
+    },
+    { property: 'og:image', content: 'https://i.imgur.com/1WKhzeF.jpg' },
+    {
+      property: 'og:image:width',
+      content: '1200',
+    },
+    {
+      property: 'og:image:height',
+      content: '630',
+    },
+    { property: 'og:url', content: 'https://nymphaea.shop' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:site_name', content: 'Магазин німфей, водяних лілій' },
   ];
 };
 

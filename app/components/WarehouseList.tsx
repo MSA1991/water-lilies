@@ -30,6 +30,7 @@ export const WarehouseList = ({
       </ul>
 
       <button
+        type="button"
         onClick={showMoreWarehouses}
         className="w-full border-t-2 border-secondary bg-secondary-light p-2 text-center transition-colors hover:bg-secondary hover:text-white"
       >
