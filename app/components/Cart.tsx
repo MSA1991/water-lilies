@@ -37,7 +37,7 @@ export const Cart = () => {
 
   return (
     <>
-      <m.div
+      <m.aside
         initial={false}
         variants={variants}
         animate={isCartOpen ? 'open' : 'closed'}
@@ -93,7 +93,7 @@ export const Cart = () => {
             '-translate-y-1/2 translate-x-1/2 bg-yellow blur-3xl',
           )}
         />
-      </m.div>
+      </m.aside>
 
       <Overlay isOpen={isCartOpen || isOrderModalOpen} onClose={closeCart} />
 

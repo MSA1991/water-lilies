@@ -31,7 +31,7 @@ export const Menu = ({ isOpen, onClose }: Props) => {
 
   return (
     <div className="md:hidden">
-      <m.aside
+      <m.nav
         initial={false}
         variants={menuVariants}
         animate={isOpen ? 'open' : 'closed'}
@@ -83,7 +83,7 @@ export const Menu = ({ isOpen, onClose }: Props) => {
           />
         </div>
         <div className="absolute -left-12 top-0 h-full w-14 bg-white" />
-      </m.aside>
+      </m.nav>
 
       <Overlay isOpen={isOpen} onClose={onClose} />
     </div>
