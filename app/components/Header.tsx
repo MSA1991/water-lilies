@@ -23,22 +23,22 @@ export const Header = () => {
         )}
       />
 
-      <div className="container mb-14 mt-24 flex flex-col-reverse items-center md:mb-16 md:mt-36 md:flex-row lg:mb-32 lg:mt-48">
-        <div className="flex flex-col items-center gap-4 md:items-start md:gap-8 lg:gap-10">
+      <div className="container mb-14 mt-20 flex flex-col-reverse items-center md:mb-16 md:mt-36 md:flex-row lg:mb-32 lg:mt-48">
+        <div className="flex w-full flex-col items-center gap-5 text-center md:w-1/2 md:items-start md:text-left lg:gap-7">
           <m.h1
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ type: 'spring', damping: 12 }}
-            className="text-6xl font-bold md:text-8xl lg:text-9xl"
+            className="text-3xl font-bold md:text-4xl lg:text-5xl"
           >
-            Німфеї
+            Nymphaea&nbsp;Shop - магазин німфей, водяних лілій
           </m.h1>
 
           <m.p
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ type: 'spring', damping: 12, delay: 0.3 }}
-            className="section-title text-center md:text-left"
+            className="section-title"
           >
             Краса і гармонія для вашої водойми
           </m.p>

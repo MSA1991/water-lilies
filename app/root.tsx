@@ -17,10 +17,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        {/* Google Analytics Script */}
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=ID`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-YGBMJB4LZ6`}
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -32,6 +31,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         page_path: window.location.pathname,
         });
     `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Nymphaea Shop - магазин німфей, водяних лілій',
+              image: 'https://i.imgur.com/HdYxAgW.jpg',
+              url: 'https://nymphaea.shop',
+            }),
           }}
         />
       </head>
