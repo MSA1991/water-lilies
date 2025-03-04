@@ -1,7 +1,7 @@
 import * as m from 'motion/react-client';
 import { Link as ScrollLink } from 'react-scroll';
 import { clsx } from 'clsx';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import { CgClose } from 'react-icons/cg';
 import { Overlay } from './Overlay';
 import { useLockScroll } from '~/hooks/useLockScroll';
 import { useSectionsOffset } from '~/store/sectionsOffset';
@@ -44,7 +44,7 @@ export const Menu = ({ isOpen, onClose }: Props) => {
             className="absolute right-2 top-2 sm:right-4 sm:top-4"
             onClick={onClose}
           >
-            <XMarkIcon className="icon" />
+            <CgClose className="icon" />
           </button>
 
           <ul className="flex flex-col items-center gap-5">
@@ -62,6 +62,7 @@ export const Menu = ({ isOpen, onClose }: Props) => {
                 >
                   <ScrollLink
                     to={id}
+                    href={`#${id}`}
                     smooth={true}
                     offset={currentOffset}
                     duration={300}

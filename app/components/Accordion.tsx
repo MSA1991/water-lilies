@@ -1,6 +1,6 @@
 import * as m from 'motion/react-client';
 import { clsx } from 'clsx';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { IoIosArrowDown } from 'react-icons/io';
 
 type Props = {
   question: string;
@@ -18,7 +18,7 @@ export const Accordion = ({ question, answer, isOpen }: Props) => (
     <div className="flex items-center justify-between">
       <div className="text-lg font-bold lg:text-2xl">{question}</div>
 
-      <ChevronDownIcon
+      <IoIosArrowDown
         className={clsx('icon transition-transform', {
           'rotate-180': isOpen,
         })}

@@ -40,7 +40,7 @@ export const Header = () => {
             transition={{ type: 'spring', damping: 12, delay: 0.3 }}
             className="section-title"
           >
-            Краса і гармонія для вашої водойми
+            Краса і гармонія для Вашої водойми
           </m.p>
 
           <m.div
@@ -51,6 +51,7 @@ export const Header = () => {
           >
             <ScrollLink
               to={PageSectionsId.Catalog}
+              href={`#${PageSectionsId.Catalog}`}
               smooth={true}
               offset={sectionOffset}
               duration={300}

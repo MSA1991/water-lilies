@@ -24,6 +24,7 @@ export const NavLinks = ({ activeLinkId, onChangeActiveLink }: Props) => {
           <li key={id}>
             <ScrollLink
               to={id}
+              href={`#${id}`}
               spy={true}
               smooth={true}
               offset={currentOffset}

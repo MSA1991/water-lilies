@@ -4,9 +4,9 @@ export default {
   content: ['./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}'],
   theme: {
     colors: {
-      primary: '#D64761',
-      'primary-light': '#DE6D83',
-      secondary: '#2B9CA6',
+      primary: '#C73A53',
+      'primary-light': '#D45F76',
+      secondary: '#14757D',
       'secondary-light': '#B1F2D7',
       white: '#E6FFF3',
       black: '#001A00',

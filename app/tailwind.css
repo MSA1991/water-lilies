@@ -71,11 +71,11 @@
   }
 
   .button {
-    @apply flex-center h-11 w-full cursor-pointer rounded-lg bg-primary text-base font-bold uppercase tracking-wider text-white shadow-xl transition-all hover:bg-primary-light hover:tracking-widest;
+    @apply flex-center h-11 w-full cursor-pointer rounded-lg bg-primary text-base font-bold uppercase tracking-wider text-[#FFF] shadow-xl transition-all hover:bg-primary-light hover:tracking-widest;
   }
 
   .icon {
-    @apply h-8 w-8 stroke-2 text-primary transition-colors hover:text-primary-light;
+    @apply h-8 w-8 text-primary transition-colors hover:text-primary-light;
   }
 
   .border-box {

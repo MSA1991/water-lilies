@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react';
 import { useActionData } from '@remix-run/react';
 import * as m from 'motion/react-client';
 import { clsx } from 'clsx';
-import {
-  XMarkIcon,
-  CheckIcon,
-  FaceFrownIcon,
-} from '@heroicons/react/24/outline';
+import { CgClose } from 'react-icons/cg';
+import { FaCheck } from 'react-icons/fa';
+import { FaRegFaceFrown } from 'react-icons/fa6';
 import { OrderForm } from './OrderForm';
 import { useCart } from '~/store/cart';
 import { OrderFormResponse } from '~/types/OrderFormData';
@@ -57,7 +55,7 @@ export const OrderModal = ({ isOpen, onClose }: Props) => {
           onClick={handleCloseModal}
           className="absolute right-2 top-2 sm:right-4 sm:top-4"
         >
-          <XMarkIcon className="icon" />
+          <CgClose className="icon" />
         </button>
 
         {!formState?.success && !formState?.errors?.sendMessage && (
@@ -72,7 +70,7 @@ export const OrderModal = ({ isOpen, onClose }: Props) => {
 
         {formState?.success && (
           <div className="flex flex-col items-center gap-5 p-10">
-            <CheckIcon className="h-80 w-80 stroke-2 text-secondary-light" />
+            <FaCheck className="h-80 w-80 text-secondary-light" />
 
             <h3 className="text-center text-xl font-bold">
               Дякуємо за замовлення.
@@ -84,7 +82,7 @@ export const OrderModal = ({ isOpen, onClose }: Props) => {
 
         {formState?.errors?.sendMessage && (
           <div className="flex flex-col items-center gap-5 p-10">
-            <FaceFrownIcon className="h-80 w-80 stroke-2 text-primary-light" />
+            <FaRegFaceFrown className="h-80 w-80 text-primary-light" />
 
             <h3 className="text-center text-xl font-bold">
               {formState.errors.sendMessage}

@@ -5,6 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import type { LinksFunction } from '@remix-run/node';
 import { NotFound } from './components/NotFound';
 
 import './tailwind.css';
@@ -54,6 +55,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
     </html>
   );
 }
+
+export const links: LinksFunction = () => [
+  { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+];
 
 export default function App() {
   return <Outlet />;

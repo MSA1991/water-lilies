@@ -47,8 +47,10 @@ export const ProductCard = ({ product, onAddToCart }: Props) => {
           {variants.map((variant) => (
             <li key={variant.size} className="grow">
               <button
+                type="button"
+                aria-label="Вибрати вік рослини"
                 className={clsx(
-                  'border-box w-full rounded p-1 font-bold transition-all',
+                  'border-box w-full rounded p-1 font-bold transition-colors',
                   {
                     'bg-secondary text-white': variant.size === size,
                   },

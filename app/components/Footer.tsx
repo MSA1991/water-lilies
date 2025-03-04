@@ -1,4 +1,5 @@
 import { clsx } from 'clsx';
+import { AiFillInstagram } from 'react-icons/ai';
 import { WORK_HOURS } from '~/data/workHours';
 import { PageSectionsId } from '../types/PageSections';
 import frog from '../assets/images/frog.svg';
@@ -19,7 +20,7 @@ export const Footer = () => (
       <div className="flex w-full flex-col gap-5 text-lg font-bold sm:w-2/3 md:w-1/2 md:gap-7 md:text-xl lg:text-2xl">
         <h2 className="section-title">Контакти</h2>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <div>
             Телефон:{' '}
             <a
@@ -30,13 +31,26 @@ export const Footer = () => (
             </a>
           </div>
 
-          <div className="mt-2">
+          <div>
             Email:{' '}
             <a
               href="mailto:water.lilies.ua@gmail.com"
               className="text-primary transition-colors hover:text-primary-light"
             >
               water.lilies.ua@gmail.com
+            </a>
+          </div>
+
+          <div className="flex gap-2">
+            Соціальні мережі:{' '}
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Перейти до інстаграму"
+              className="text-primary transition-colors hover:text-primary-light"
+            >
+              <AiFillInstagram className="icon" />
             </a>
           </div>
         </div>

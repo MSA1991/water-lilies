@@ -3,8 +3,8 @@ export const loader = () => {
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
     <loc>https://nymphaea.shop/</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-03-04</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     </url>
     </urlset>

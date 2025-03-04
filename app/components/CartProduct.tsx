@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
-import { MinusIcon, PlusIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { HiMiniMinus, HiPlus } from 'react-icons/hi2';
+import { CgClose } from 'react-icons/cg';
 import { useCart } from '~/store/cart';
 import { CartProduct as CartProductType } from '~/types/Product';
 
@@ -45,20 +46,20 @@ export const CartProduct = memo(({ product }: Props) => {
       <div className="flex items-center gap-1 text-white">
         <button
           type="button"
-          className="h-6 w-6 rounded-sm bg-secondary p-0.5"
+          className="flex-center h-6 w-6 rounded-sm bg-secondary p-0.5"
           onClick={() => decreaseQuantity(id)}
         >
-          <MinusIcon />
+          <HiMiniMinus />
         </button>
 
         <div className="w-4 text-center font-bold text-black">{quantity}</div>
 
         <button
           type="button"
-          className="h-6 w-6 rounded-sm bg-secondary p-0.5"
+          className="flex-center h-6 w-6 rounded-sm bg-secondary p-0.5"
           onClick={() => increaseQuantity(id)}
         >
-          <PlusIcon />
+          <HiPlus />
         </button>
       </div>
 
@@ -67,7 +68,7 @@ export const CartProduct = memo(({ product }: Props) => {
         className="absolute right-2 top-1"
         onClick={() => removeProduct(id)}
       >
-        <XMarkIcon className="icon h-6 w-6" />
+        <CgClose className="icon h-6 w-6" />
       </button>
     </article>
   );

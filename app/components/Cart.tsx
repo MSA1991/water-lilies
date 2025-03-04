@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as m from 'motion/react-client';
 import { clsx } from 'clsx';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { FaArrowRight } from 'react-icons/fa6';
 import { Overlay } from './Overlay';
 import { Button } from './Button';
 import { CartProductList } from './CartProductList';
@@ -54,13 +54,13 @@ export const Cart = () => {
           onClick={closeCart}
           className="absolute left-2 top-2 sm:left-4 sm:top-4"
         >
-          <ArrowRightIcon className="icon" />
+          <FaArrowRight className="icon" />
         </button>
 
         {!productsCart.length ? (
           <div className="flex-center grow flex-col">
             <h3 className="text-2xl font-bold">Кошик порожній</h3>
-            <img src={emptyCart} alt="empty cart" className="w-10/12" />
+            <img src={emptyCart} alt="кошик порожній" className="w-10/12" />
           </div>
         ) : (
           <div className="scroll-hidden flex grow flex-col gap-5 overflow-y-auto">

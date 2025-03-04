@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import * as m from 'motion/react-client';
 import { AnimatePresence } from 'motion/react';
-import { ShoppingBagIcon, Bars3Icon } from '@heroicons/react/24/solid';
+import { LuMenu } from 'react-icons/lu';
+import { HiShoppingBag } from 'react-icons/hi2';
 import { Logo } from './Logo';
 import { NavLinks } from './NavLinks';
 import { Menu } from './Menu';
@@ -35,24 +36,26 @@ export const Navigation = () => {
   return (
     <>
       <nav className="container sticky inset-x-0 top-4 z-30 -mt-14 h-14 md:-mt-[72px] md:h-[72px]">
-        <div className="border-box flex h-full items-center justify-between rounded-xl bg-secondary/50 p-2 px-2.5 shadow-2xl backdrop-blur-xl md:p-4">
+        <div className="border-box flex h-full items-center justify-between rounded-xl bg-secondary-light/50 p-2 px-2.5 shadow-2xl backdrop-blur-xl md:p-4">
           <button
             aria-label="відкрити меню"
             type="button"
             className="md:hidden"
             onClick={handleOpenMenu}
           >
-            <Bars3Icon className="icon drop-shadow-[0px_0px_5px_#FFF]" />
+            <LuMenu className="icon drop-shadow-[0px_0px_5px_#FFF]" />
           </button>
 
           <ScrollLink
             to={PageSectionsId.Home}
+            href={`#${PageSectionsId.Home}`}
             smooth={true}
             spy={true}
             offset={0}
             duration={300}
             isDynamic={true}
             onSetActive={() => debouncedChangeActiveLink(null)}
+            aria-label="Перейти до початку сторінки"
             className="cursor-pointer"
           >
             <Logo />
@@ -72,7 +75,7 @@ export const Navigation = () => {
               className="block"
               onClick={openCart}
             >
-              <ShoppingBagIcon className="icon drop-shadow-[0px_0px_5px_#FFF]" />
+              <HiShoppingBag className="icon drop-shadow-[0px_0px_5px_#FFF]" />
             </button>
 
             <AnimatePresence>
