@@ -3,7 +3,7 @@ export const loader = () => {
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
     <loc>https://nymphaea.shop/</loc>
-    <lastmod>2025-03-04</lastmod>
+    <lastmod>2025-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     </url>

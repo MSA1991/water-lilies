@@ -58,6 +58,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export const links: LinksFunction = () => [
   { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+  { rel: 'canonical', href: 'https://nymphaea.shop/' },
+  { rel: 'alternate', hreflang: 'x-default', href: 'https://nymphaea.shop/' },
 ];
 
 export default function App() {

@@ -5,6 +5,7 @@ import type {
   MetaFunction,
 } from '@remix-run/node';
 import { data, useLoaderData } from '@remix-run/react';
+import { metaTags } from '~/metaTags';
 import { Navigation } from '~/components/Navigation';
 import { Header } from '~/components/Header';
 import { About } from '~/components/About';
@@ -22,56 +23,10 @@ import { useDebounce } from '~/hooks/useDebounce';
 import { PageSectionsId } from '~/types/PageSections';
 import { OrderFormData } from '~/types/OrderFormData';
 
-export const meta: MetaFunction = () => {
-  return [
-    {
-      title:
-        'Купити німфеї, водяні лілії, латаття для ставка! Доставка по Україні',
-    },
-    {
-      name: 'description',
-      content:
-        'Купити німфеї, водяні лілії, латаття, кувшинки. Рослини для водойм. Різноманіття сортів, кращі ціни та швидка доставка по всій Україні Новою Поштою',
-    },
-    {
-      name: 'robots',
-      content: 'index, follow',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Купити німфеї, водяні лілії, латаття, кувшинки, водні рослини для ставка, купити в Україні',
-    },
-    {
-      property: 'og:title',
-      content:
-        'Купити німфеї, водяні лілії, латаття для ставка! Доставка по Україні',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Купити німфеї, водяні лілії, латаття, кувшинки. Рослини для водойм. Різноманіття сортів, кращі ціни та швидка доставка по всій Україні Новою Поштою',
-    },
-    { property: 'og:image', content: 'https://i.imgur.com/1WKhzeF.jpg' },
-    {
-      property: 'og:image:width',
-      content: '1200',
-    },
-    {
-      property: 'og:image:height',
-      content: '630',
-    },
-    { property: 'og:url', content: 'https://nymphaea.shop' },
-    { property: 'og:type', content: 'website' },
-    {
-      property: 'og:site_name',
-      content: 'Nymphaea Shop - магазин німфей, водяних лілій',
-    },
-  ];
-};
+export const meta: MetaFunction = () => metaTags;
 
 export const headers: HeadersFunction = () => ({
-  'Cache-Control': 'max-age=3600, s-maxage=3600',
+  'Cache-Control': 'public, max-age=86400, s-maxage=86400',
 });
 
 export const loader = async () => getProducts();
