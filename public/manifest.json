@@ -1,0 +1,40 @@
+{
+  "name": "Nymphaea Shop",
+  "short_name": "NS",
+  "display": "standalone",
+  "orientation": "any",
+  "dir": "ltr",
+  "lang": "uk-UA",
+  "start_url": "/",
+  "description": "Купити німфеї, водяні лілії, латаття, кувшинки для ставка. Різноманіття сортів, кращі ціни та швидка доставка по всій Україні Новою Поштою",
+  "theme_color": "#B1F2D7",
+  "background_color": "#E6FFF3",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.jpg",
+      "type": "image/jpg",
+      "sizes": "1920x959",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/mobile.jpg",
+      "type": "image/jpg",
+      "sizes": "375x667",
+      "form_factor": "narrow"
+    }
+  ]
+}

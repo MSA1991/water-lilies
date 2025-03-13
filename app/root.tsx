@@ -57,9 +57,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export const links: LinksFunction = () => [
+  { rel: 'manifest', href: '/manifest.json' },
   { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
   { rel: 'canonical', href: 'https://nymphaea.shop/' },
-  { rel: 'alternate', hreflang: 'x-default', href: 'https://nymphaea.shop/' },
+  { rel: 'alternate', hrefLang: 'x-default', href: 'https://nymphaea.shop/' },
 ];
 
 export default function App() {

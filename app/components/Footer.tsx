@@ -44,7 +44,7 @@ export const Footer = () => (
           <div className="flex gap-2">
             Соціальні мережі:{' '}
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/nymphaea_shop_ua"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Перейти до інстаграму"

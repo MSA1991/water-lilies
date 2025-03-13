@@ -12,7 +12,7 @@ export const WarehouseList = ({
   showMoreWarehouses,
 }: Props) =>
   !warehouses.length ? (
-    <div className="p-2 px-4">Нічого не знайдено</div>
+    <div className="p-2 sm:px-4">Нічого не знайдено</div>
   ) : (
     <div>
       <ul>
@@ -20,10 +20,10 @@ export const WarehouseList = ({
           <li key={warehouse.Ref}>
             <button
               type="button"
-              className="line-clamp-1 w-full p-2 px-4 text-start transition-colors hover:bg-secondary hover:text-white"
+              className="w-full p-2 text-start transition-colors hover:bg-secondary hover:text-white sm:px-4"
               onClick={() => setWarehouse(warehouse.Description)}
             >
-              {warehouse.Description}
+              <div className="line-clamp-1">{warehouse.Description}</div>
             </button>
           </li>
         ))}

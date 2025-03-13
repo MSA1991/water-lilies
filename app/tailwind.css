@@ -87,6 +87,6 @@
   }
 
   .input {
-    @apply w-full rounded-md border-2 border-secondary-light bg-white p-2 px-4 transition-colors focus:border-secondary focus:outline-none;
+    @apply w-full rounded-md border-2 border-secondary-light bg-white p-2 transition-colors focus:border-secondary focus:outline-none sm:px-4;
   }
 }

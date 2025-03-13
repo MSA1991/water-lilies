@@ -60,19 +60,19 @@ export const SearchCities = ({ onChangeSearchedCity, error }: Props) => {
       </label>
 
       {showCities && (
-        <div className="border-box absolute left-0 top-[78px] z-10 max-h-40 w-full overflow-y-auto rounded-md bg-white">
+        <div className="border-box absolute left-0 top-[62px] z-10 max-h-40 w-full overflow-y-auto rounded-md bg-white sm:top-[78px]">
           {!cities.length ? (
-            <div className="p-2 px-4">Нічого не знайдено</div>
+            <div className="p-2 sm:px-4">Нічого не знайдено</div>
           ) : (
             <ul>
               {cities.map((city) => (
                 <li key={city.CityID}>
                   <button
                     type="button"
-                    className="line-clamp-1 w-full p-2 px-4 text-start transition-colors hover:bg-secondary hover:text-white"
+                    className="w-full p-2 text-start transition-colors hover:bg-secondary hover:text-white sm:px-4"
                     onClick={() => handleSetFullCityName(city)}
                   >
-                    {getFullCityName(city)}
+                    <div className="line-clamp-1">{getFullCityName(city)}</div>
                   </button>
                 </li>
               ))}
