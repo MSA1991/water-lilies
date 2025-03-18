@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useActionData } from '@remix-run/react';
-import * as m from 'motion/react-client';
+import * as m from 'motion/react-m';
 import { clsx } from 'clsx';
 import { CgClose } from 'react-icons/cg';
 import { FaCheck } from 'react-icons/fa';

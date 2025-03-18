@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import * as m from 'motion/react-client';
+import * as m from 'motion/react-m';
 import { AnimatePresence } from 'motion/react';
 import { LuMenu } from 'react-icons/lu';
 import { HiShoppingBag } from 'react-icons/hi2';
@@ -43,7 +43,7 @@ export const Navigation = () => {
             className="md:hidden"
             onClick={handleOpenMenu}
           >
-            <LuMenu className="icon drop-shadow-[0px_0px_5px_#FFF]" />
+            <LuMenu className="icon-lg drop-shadow-white" />
           </button>
 
           <ScrollLink
@@ -75,7 +75,7 @@ export const Navigation = () => {
               className="block"
               onClick={openCart}
             >
-              <HiShoppingBag className="icon drop-shadow-[0px_0px_5px_#FFF]" />
+              <HiShoppingBag className="icon-lg drop-shadow-white" />
             </button>
 
             <AnimatePresence>

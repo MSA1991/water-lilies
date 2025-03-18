@@ -1,4 +1,4 @@
-import * as m from 'motion/react-client';
+import * as m from 'motion/react-m';
 
 type Props = {
   isOpen: boolean;

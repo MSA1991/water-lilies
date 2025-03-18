@@ -1,5 +1,5 @@
 import { Link as ScrollLink } from 'react-scroll';
-import * as m from 'motion/react-client';
+import * as m from 'motion/react-m';
 import { clsx } from 'clsx';
 import { ParallaxImage } from './ParallaxImage';
 import { useSectionsOffset } from '~/store/sectionsOffset';
@@ -23,30 +23,18 @@ export const Header = () => {
         )}
       />
 
-      <div className="container mb-14 mt-20 flex flex-col-reverse items-center md:mb-16 md:mt-36 md:flex-row lg:mb-32 lg:mt-48">
+      <div className="container mb-14 mt-16 flex flex-col-reverse items-center md:mb-16 md:mt-36 md:flex-row lg:mb-32 lg:mt-48">
         <div className="flex w-full flex-col items-center gap-5 text-center md:w-1/2 md:items-start md:text-left lg:gap-7">
-          <m.h1
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ type: 'spring', damping: 12 }}
-            className="text-3xl font-bold md:text-4xl lg:text-5xl"
-          >
+          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
             Nymphaea&nbsp;Shop - магазин німфей, водяних лілій
-          </m.h1>
+          </h1>
 
-          <m.p
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ type: 'spring', damping: 12, delay: 0.3 }}
-            className="section-title"
-          >
-            Краса і гармонія для Вашої водойми
-          </m.p>
+          <p className="section-title">Краса і гармонія для Вашої водойми</p>
 
           <m.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: 'spring', damping: 12, delay: 0.6 }}
+            transition={{ type: 'spring', damping: 12 }}
             className="w-full max-w-48"
           >
             <ScrollLink

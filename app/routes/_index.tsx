@@ -1,10 +1,11 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useLayoutEffect } from 'react';
 import type {
   ActionFunctionArgs,
   HeadersFunction,
   MetaFunction,
 } from '@remix-run/node';
 import { data, useLoaderData } from '@remix-run/react';
+import { LazyMotion, domAnimation } from 'motion/react';
 import { metaTags } from '~/metaTags';
 import { Navigation } from '~/components/Navigation';
 import { Header } from '~/components/Header';
@@ -76,7 +77,7 @@ export default function Index() {
 
   const debouncedChangeOffset = useDebounce(onChangeOffset, 300);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     onChangeOffset();
 
     window.addEventListener('resize', debouncedChangeOffset);
@@ -88,7 +89,7 @@ export default function Index() {
   }, []);
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <Navigation />
       <Header />
       <main>
@@ -99,6 +100,6 @@ export default function Index() {
       </main>
       <Footer />
       <Cart />
-    </>
+    </LazyMotion>
   );
 }

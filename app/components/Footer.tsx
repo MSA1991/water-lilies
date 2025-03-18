@@ -23,10 +23,7 @@ export const Footer = () => (
         <div className="flex flex-col gap-2">
           <div>
             Телефон:{' '}
-            <a
-              href="tel:+380666915982"
-              className="text-primary transition-colors hover:text-primary-light"
-            >
+            <a href="tel:+380666915982" className="text-primary-hover">
               +38 (066) 691-59-82
             </a>
           </div>
@@ -35,7 +32,7 @@ export const Footer = () => (
             Email:{' '}
             <a
               href="mailto:water.lilies.ua@gmail.com"
-              className="text-primary transition-colors hover:text-primary-light"
+              className="text-primary-hover"
             >
               water.lilies.ua@gmail.com
             </a>
@@ -48,9 +45,9 @@ export const Footer = () => (
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Перейти до інстаграму"
-              className="text-primary transition-colors hover:text-primary-light"
+              className="text-primary-hover"
             >
-              <AiFillInstagram className="icon" />
+              <AiFillInstagram className="icon h-7 w-7 lg:h-8 lg:w-8" />
             </a>
           </div>
         </div>

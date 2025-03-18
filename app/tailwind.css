@@ -74,8 +74,16 @@
     @apply flex-center h-11 w-full cursor-pointer rounded-lg bg-primary text-base font-bold uppercase tracking-wider text-[#FFF] shadow-xl transition-all hover:bg-primary-light hover:tracking-widest;
   }
 
+  .text-primary-hover {
+    @apply text-primary transition-colors hover:text-primary-light;
+  }
+
   .icon {
-    @apply h-8 w-8 text-primary transition-colors hover:text-primary-light;
+    @apply text-primary-hover h-6 w-6 sm:h-8 sm:w-8;
+  }
+
+  .icon-lg {
+    @apply text-primary-hover h-8 w-8;
   }
 
   .border-box {
@@ -88,5 +96,9 @@
 
   .input {
     @apply w-full rounded-md border-2 border-secondary-light bg-white p-2 transition-colors focus:border-secondary focus:outline-none sm:px-4;
+  }
+
+  .drop-shadow-white {
+    @apply drop-shadow-[0px_0px_5px_#FFF];
   }
 }

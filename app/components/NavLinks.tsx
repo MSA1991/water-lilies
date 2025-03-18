@@ -31,7 +31,7 @@ export const NavLinks = ({ activeLinkId, onChangeActiveLink }: Props) => {
               duration={300}
               isDynamic={true}
               onSetActive={() => onChangeActiveLink(id)}
-              className="relative cursor-pointer text-xl font-bold drop-shadow-[0px_0px_5px_#FFF] transition-colors hover:text-primary"
+              className="drop-shadow-white relative cursor-pointer text-xl font-bold transition-colors hover:text-primary"
             >
               {label}
 

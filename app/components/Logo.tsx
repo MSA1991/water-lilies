@@ -1,7 +1,7 @@
 export const Logo = () => (
   <svg
     viewBox="0 0 7860 4900"
-    className="h-auto w-14 fill-primary drop-shadow-[0px_0px_5px_#FFF] transition-colors hover:fill-primary-light [&>#left-bottom]:hover:-rotate-6 [&>#left]:hover:-rotate-3 [&>#right-bottom]:hover:rotate-6 [&>#right]:hover:rotate-3 [&>path]:origin-bottom [&>path]:transition-transform"
+    className="drop-shadow-white h-auto w-14 fill-primary transition-colors hover:fill-primary-light [&>#left-bottom]:hover:-rotate-6 [&>#left]:hover:-rotate-3 [&>#right-bottom]:hover:rotate-6 [&>#right]:hover:rotate-3 [&>path]:origin-bottom [&>path]:transition-transform"
   >
     <path d="M3665 4883 c-754 -17 -1536 -124 -2141 -294 -851 -238 -1397 -595 -1499 -979 -19 -70 -19 -199 -1 -268 49 -183 197 -362 429 -520 87 -60 280 -172 294 -172 3 0 -32 27 -77 61 -337 250 -436 540 -277 818 253 445 1192 818 2412 960 372 44 1007 75 1315 64 901 -30 1572 -128 2186 -319 667 -207 1114 -511 1212 -824 25 -80 22 -227 -6 -304 -48 -130 -162 -271 -310 -382 -108 -81 -108 -83 -7 -29 416 221 654 504 655 777 0 180 -111 385 -294 540 -582 493 -1798 815 -3281 868 -263 9 -333 10 -610 3z" />
     <path

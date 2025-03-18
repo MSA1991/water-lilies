@@ -1,4 +1,4 @@
-import * as m from 'motion/react-client';
+import * as m from 'motion/react-m';
 import { Link as ScrollLink } from 'react-scroll';
 import { clsx } from 'clsx';
 import { CgClose } from 'react-icons/cg';
@@ -44,7 +44,7 @@ export const Menu = ({ isOpen, onClose }: Props) => {
             className="absolute right-2 top-2 sm:right-4 sm:top-4"
             onClick={onClose}
           >
-            <CgClose className="icon" />
+            <CgClose className="icon-lg" />
           </button>
 
           <ul className="flex flex-col items-center gap-5">

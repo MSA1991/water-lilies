@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as m from 'motion/react-client';
+import * as m from 'motion/react-m';
 import { clsx } from 'clsx';
 import { FaArrowRight } from 'react-icons/fa6';
 import { Overlay } from './Overlay';
@@ -54,7 +54,7 @@ export const Cart = () => {
           onClick={closeCart}
           className="absolute left-2 top-2 sm:left-4 sm:top-4"
         >
-          <FaArrowRight className="icon" />
+          <FaArrowRight className="icon-lg" />
         </button>
 
         {!productsCart.length ? (
