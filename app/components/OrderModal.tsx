@@ -70,23 +70,23 @@ export const OrderModal = ({ isOpen, onClose }: Props) => {
 
         {formState?.success && (
           <div className="flex flex-col items-center gap-5 p-10">
-            <FaCheck className="h-80 w-80 text-secondary-light" />
+            <FaCheck className="h-60 w-60 text-secondary-light" />
 
-            <h3 className="text-center text-xl font-bold">
+            <p className="text-center text-xl font-bold">
               Дякуємо за замовлення.
               <br />
               Ми зв`яжемося з Вами найближчим часом.
-            </h3>
+            </p>
           </div>
         )}
 
         {formState?.errors?.sendMessage && (
           <div className="flex flex-col items-center gap-5 p-10">
-            <FaRegFaceFrown className="h-80 w-80 text-primary-light" />
+            <FaRegFaceFrown className="h-60 w-60 text-primary-light" />
 
-            <h3 className="text-center text-xl font-bold">
+            <p className="text-center text-xl font-bold">
               {formState.errors.sendMessage}
-            </h3>
+            </p>
           </div>
         )}
       </m.div>

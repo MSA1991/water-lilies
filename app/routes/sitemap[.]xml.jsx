@@ -3,7 +3,7 @@ export const loader = () => {
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
     <loc>https://nymphaea.shop/</loc>
-    <lastmod>2025-03-09</lastmod>
+    <lastmod>2025-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     </url>
@@ -14,8 +14,6 @@ export const loader = () => {
     status: 200,
     headers: {
       'Content-Type': 'application/xml',
-      'xml-version': '1.0',
-      encoding: 'UTF-8',
     },
   });
 };

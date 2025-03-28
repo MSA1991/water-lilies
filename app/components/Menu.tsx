@@ -10,7 +10,7 @@ import { PageSectionsId } from '~/types/PageSections';
 
 type Props = {
   isOpen: boolean;
-  onClose: () => void;
+  onToggle: () => void;
 };
 
 const menuVariants = {
@@ -23,7 +23,7 @@ const linkVariants = {
   hidden: { opacity: 0, x: -100 },
 };
 
-export const Menu = ({ isOpen, onClose }: Props) => {
+export const Menu = ({ isOpen, onToggle }: Props) => {
   const sectionOffset = useSectionsOffset.use.sectionOffset();
   const footerOffset = useSectionsOffset.use.footerOffset();
 
@@ -42,7 +42,7 @@ export const Menu = ({ isOpen, onClose }: Props) => {
           <button
             type="button"
             className="absolute right-2 top-2 sm:right-4 sm:top-4"
-            onClick={onClose}
+            onClick={onToggle}
           >
             <CgClose className="icon-lg" />
           </button>
@@ -66,7 +66,7 @@ export const Menu = ({ isOpen, onClose }: Props) => {
                     smooth={true}
                     offset={currentOffset}
                     duration={300}
-                    onClick={onClose}
+                    onClick={onToggle}
                     className="cursor-pointer text-2xl font-bold transition-colors hover:text-primary"
                   >
                     {label}
@@ -86,7 +86,7 @@ export const Menu = ({ isOpen, onClose }: Props) => {
         <div className="absolute -left-12 top-0 h-full w-14 bg-white" />
       </m.nav>
 
-      <Overlay isOpen={isOpen} onClose={onClose} />
+      <Overlay isOpen={isOpen} onClose={onToggle} />
     </div>
   );
 };

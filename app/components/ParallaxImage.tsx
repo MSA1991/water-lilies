@@ -3,7 +3,9 @@ import {
   MouseParallaxChild,
 } from 'react-parallax-mouse';
 import flower from '../assets/images/flower.webp';
+import flowerMobile from '../assets/images/flower-mobile.webp';
 import leaf from '../assets/images/leaf.webp';
+import leafMobile from '../assets/images/leaf-mobile.webp';
 
 export const ParallaxImage = () => (
   <MouseParallaxContainer
@@ -16,11 +18,39 @@ export const ParallaxImage = () => (
       factorY={0.5}
       className="absolute left-0 top-0 z-10"
     >
-      <img src={flower} alt="квітка водяної лілії" className="h-auto w-full" />
+      <picture>
+        <source
+          srcSet={flowerMobile}
+          media="(max-width: 640px)"
+          type="image/webp"
+        />
+
+        <img
+          src={flower}
+          className="h-auto w-full"
+          alt="квітка водяної лілії"
+          width="860"
+          height="860"
+        />
+      </picture>
     </MouseParallaxChild>
 
     <MouseParallaxChild factorX={0.5} factorY={0.7}>
-      <img src={leaf} alt="листок водяної лілії" className="h-auto w-full" />
+      <picture>
+        <source
+          srcSet={leafMobile}
+          media="(max-width: 640px)"
+          type="image/webp"
+        />
+
+        <img
+          src={leaf}
+          className="h-auto w-full"
+          alt="листок водяної лілії"
+          width="860"
+          height="860"
+        />
+      </picture>
     </MouseParallaxChild>
   </MouseParallaxContainer>
 );

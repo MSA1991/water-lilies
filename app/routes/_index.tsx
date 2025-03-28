@@ -14,7 +14,6 @@ import { Catalog } from '~/components/Catalog';
 import { Delivery } from '~/components/Delivery';
 import { Faq } from '~/components/Faq';
 import { Footer } from '~/components/Footer';
-import { Cart } from '~/components/Cart';
 import { useSectionsOffset } from '~/store/sectionsOffset';
 import { getProducts } from '~/services/contentful';
 import { sendMessage } from '~/services/telegram';
@@ -99,7 +98,6 @@ export default function Index() {
         <Faq />
       </main>
       <Footer />
-      <Cart />
     </LazyMotion>
   );
 }
