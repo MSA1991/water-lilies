@@ -1,7 +1,8 @@
-import { ApiCitiesResponse } from 'api-novaposhta/lib/api/types/address';
 import { ChangeEvent, useCallback, useState } from 'react';
-import { useDebounce } from '~/hooks/useDebounce';
+import { ApiCitiesResponse } from 'api-novaposhta/lib/api/types/address';
+
 import { getCities } from '~/services/novaposhta';
+import { useDebounce } from '~/hooks/useDebounce';
 import { getFullCityName } from '~/helpers/getFullCityName';
 
 type Props = {

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
-import { Button } from './Button';
+
+import { Button } from './UI/Button';
+
 import { Product, ProductVariants } from '~/types/Product';
 
 type Props = {

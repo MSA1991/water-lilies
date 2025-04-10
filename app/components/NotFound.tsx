@@ -1,5 +1,6 @@
 import { Link } from '@remix-run/react';
 import { clsx } from 'clsx';
+
 import nymphea from '../assets/images/nymphea.svg';
 
 export const NotFound = () => (

@@ -1,8 +1,10 @@
 import { clsx } from 'clsx';
+
 import { ProductCard } from './ProductCard';
+
+import { useCart } from '~/store/cart';
 import { Product, ProductVariants } from '~/types/Product';
 import { PageSectionsId } from '../types/PageSections';
-import { useCart } from '~/store/cart';
 
 type Props = {
   products: Product[];

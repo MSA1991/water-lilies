@@ -177,8 +177,8 @@ const assets = [
   '/icon512_maskable.png',
   '/icon512_rounded.png',
   '/manifest.json',
-  '/screenshots/desktop.jpg',
-  '/screenshots/mobile.jpg',
+  '/screenshots/desktop.webp',
+  '/screenshots/mobile.webp',
 ];
 const routes = {
   root: {

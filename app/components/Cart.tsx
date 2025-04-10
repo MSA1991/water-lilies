@@ -2,13 +2,16 @@ import { useState } from 'react';
 import * as m from 'motion/react-m';
 import { clsx } from 'clsx';
 import { FaArrowRight } from 'react-icons/fa6';
-import { Overlay } from './Overlay';
-import { Button } from './Button';
+
+import { Overlay } from './UI/Overlay';
+import { Button } from './UI/Button';
 import { CartProductList } from './CartProductList';
 import { OrderModal } from './OrderModal';
+
 import { useCart } from '~/store/cart';
 import { useLockScroll } from '~/hooks/useLockScroll';
 import { getTotalPrice } from '~/helpers/getTotalPrice';
+
 import emptyCart from '../assets/images/empty-cart.svg';
 
 const variants = {
@@ -59,8 +62,14 @@ export const Cart = () => {
 
         {!productsCart.length ? (
           <div className="flex-center grow flex-col">
-            <h3 className="text-2xl font-bold">Кошик порожній</h3>
-            <img src={emptyCart} alt="кошик порожній" className="w-10/12" />
+            <div className="section-title">Кошик порожній</div>
+
+            <img
+              src={emptyCart}
+              alt="кошик порожній"
+              loading="lazy"
+              className="h-auto w-60 md:w-96"
+            />
           </div>
         ) : (
           <div className="scroll-hidden flex grow flex-col gap-5 overflow-y-auto">

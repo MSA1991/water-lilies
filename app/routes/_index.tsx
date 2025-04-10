@@ -6,7 +6,7 @@ import type {
 } from '@remix-run/node';
 import { data, useLoaderData } from '@remix-run/react';
 import { LazyMotion, domAnimation } from 'motion/react';
-import { metaTags } from '~/metaTags';
+
 import { Navigation } from '~/components/Navigation';
 import { Header } from '~/components/Header';
 import { About } from '~/components/About';
@@ -14,6 +14,8 @@ import { Catalog } from '~/components/Catalog';
 import { Delivery } from '~/components/Delivery';
 import { Faq } from '~/components/Faq';
 import { Footer } from '~/components/Footer';
+
+import { metaTags } from '~/metaTags';
 import { useSectionsOffset } from '~/store/sectionsOffset';
 import { getProducts } from '~/services/contentful';
 import { sendMessage } from '~/services/telegram';

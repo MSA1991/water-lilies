@@ -4,8 +4,10 @@ import * as m from 'motion/react-m';
 import { AnimatePresence } from 'motion/react';
 import { LuMenu } from 'react-icons/lu';
 import { HiShoppingBag } from 'react-icons/hi2';
-import { Logo } from './Logo';
+
+import { Logo } from './UI/Logo';
 import { NavLinks } from './NavLinks';
+
 import { useCart } from '~/store/cart';
 import { useDebounce } from '~/hooks/useDebounce';
 import { PageSectionsId, SectionLinks } from '../types/PageSections';

@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useActionData } from '@remix-run/react';
 import * as m from 'motion/react-m';
-import { clsx } from 'clsx';
 import { CgClose } from 'react-icons/cg';
 import { FaCheck } from 'react-icons/fa';
 import { FaRegFaceFrown } from 'react-icons/fa6';
+import { clsx } from 'clsx';
+
 import { OrderForm } from './OrderForm';
+
 import { useCart } from '~/store/cart';
 import { OrderFormResponse } from '~/types/OrderFormData';
 

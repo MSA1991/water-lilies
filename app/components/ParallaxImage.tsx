@@ -2,6 +2,7 @@ import {
   MouseParallaxContainer,
   MouseParallaxChild,
 } from 'react-parallax-mouse';
+
 import flower from '../assets/images/flower.webp';
 import flowerMobile from '../assets/images/flower-mobile.webp';
 import leaf from '../assets/images/leaf.webp';

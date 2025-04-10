@@ -1,6 +1,7 @@
 import { memo, useMemo } from 'react';
 import { HiMiniMinus, HiPlus } from 'react-icons/hi2';
 import { CgClose } from 'react-icons/cg';
+
 import { useCart } from '~/store/cart';
 import { CartProduct as CartProductType } from '~/types/Product';
 
@@ -26,6 +27,7 @@ export const CartProduct = memo(({ product }: Props) => {
       <img
         src={image}
         alt={title}
+        loading="lazy"
         className="aspect-square h-full rounded-lg"
       />
 

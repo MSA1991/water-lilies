@@ -1,7 +1,9 @@
 import { Link as ScrollLink } from 'react-scroll';
 import * as m from 'motion/react-m';
 import { clsx } from 'clsx';
+
 import { ParallaxImage } from './ParallaxImage';
+
 import { useSectionsOffset } from '~/store/sectionsOffset';
 import { PageSectionsId } from '../types/PageSections';
 

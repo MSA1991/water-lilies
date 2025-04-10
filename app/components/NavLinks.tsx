@@ -1,6 +1,7 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { AnimatePresence } from 'motion/react';
 import * as m from 'motion/react-client';
+
 import { useSectionsOffset } from '~/store/sectionsOffset';
 import { PAGE_SECTIONS } from '~/data/pageSections';
 import { PageSectionsId, SectionLinks } from '../types/PageSections';

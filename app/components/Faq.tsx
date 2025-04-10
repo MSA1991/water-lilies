@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
-import { Accordion } from './Accordion';
+
+import { Accordion } from './UI/Accordion';
+
 import { FAQ } from '~/data/faq';
 import { PageSectionsId } from '../types/PageSections';
 

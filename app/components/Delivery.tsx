@@ -1,7 +1,9 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { clsx } from 'clsx';
+
 import { useSectionsOffset } from '~/store/sectionsOffset';
 import { PageSectionsId } from '../types/PageSections';
+
 import dragonfly from '../assets/images/dragonfly.svg';
 
 export const Delivery = () => {

@@ -1,8 +1,10 @@
 import * as m from 'motion/react-m';
 import { Link as ScrollLink } from 'react-scroll';
-import { clsx } from 'clsx';
 import { CgClose } from 'react-icons/cg';
-import { Overlay } from './Overlay';
+import { clsx } from 'clsx';
+
+import { Overlay } from './UI/Overlay';
+
 import { useLockScroll } from '~/hooks/useLockScroll';
 import { useSectionsOffset } from '~/store/sectionsOffset';
 import { PAGE_SECTIONS } from '~/data/pageSections';

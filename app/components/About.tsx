@@ -1,4 +1,5 @@
 import { PageSectionsId } from '../types/PageSections';
+
 import lily from '../assets/images/lily.svg';
 
 export const About = () => (

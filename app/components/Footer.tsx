@@ -1,7 +1,9 @@
 import { clsx } from 'clsx';
 import { AiFillInstagram } from 'react-icons/ai';
+
 import { WORK_HOURS } from '~/data/workHours';
 import { PageSectionsId } from '../types/PageSections';
+
 import frog from '../assets/images/frog.svg';
 
 export const Footer = () => (
@@ -20,15 +22,15 @@ export const Footer = () => (
       <div className="flex w-full flex-col gap-5 text-lg font-bold sm:w-2/3 md:w-1/2 md:gap-7 md:text-xl lg:text-2xl">
         <h2 className="section-title">Контакти</h2>
 
-        <div className="flex flex-col gap-2">
-          <div>
+        <ul className="flex flex-col gap-2">
+          <li>
             Телефон:{' '}
             <a href="tel:+380666915982" className="text-primary-hover">
               +38 (066) 691-59-82
             </a>
-          </div>
+          </li>
 
-          <div>
+          <li>
             Email:{' '}
             <a
               href="mailto:water.lilies.ua@gmail.com"
@@ -36,9 +38,9 @@ export const Footer = () => (
             >
               water.lilies.ua@gmail.com
             </a>
-          </div>
+          </li>
 
-          <div className="flex gap-2">
+          <li className="flex gap-2">
             Соціальні мережі:{' '}
             <a
               href="https://www.instagram.com/nymphaea_shop_ua"
@@ -49,8 +51,8 @@ export const Footer = () => (
             >
               <AiFillInstagram className="icon h-7 w-7 lg:h-8 lg:w-8" />
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
 
         <div>
           Графік роботи:
