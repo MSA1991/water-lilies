@@ -63,7 +63,7 @@
   }
 
   .section-py {
-    @apply py-14 md:py-16 lg:py-24;
+    @apply py-14 md:py-16 lg:py-28;
   }
 
   .flex-center {

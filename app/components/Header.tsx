@@ -25,7 +25,7 @@ export const Header = () => {
         )}
       />
 
-      <div className="container mb-14 mt-16 flex flex-col-reverse items-center md:mb-16 md:mt-28 md:flex-row lg:mb-32 lg:mt-44">
+      <div className="container mb-14 mt-16 flex flex-col-reverse items-center md:mt-28 md:flex-row lg:mb-32 lg:mt-44">
         <div className="flex w-full flex-col items-center gap-5 text-center md:w-1/2 md:items-start md:text-left lg:gap-7">
           <h1 className="bg-gradient-to-t from-black to-primary bg-clip-text text-3xl font-bold text-[transparent] md:text-4xl lg:text-5xl">
             Nymphaea&nbsp;Shop - магазин німфей, водяних лілій

@@ -20,8 +20,13 @@ export const ProductCard = ({ product, onAddToCart }: Props) => {
   };
 
   return (
-    <article className="border-box overflow-hidden rounded-xl bg-secondary-light/50">
+    <article
+      itemScope
+      itemType="https://schema.org/Product"
+      className="border-box overflow-hidden rounded-xl bg-secondary-light/50"
+    >
       <img
+        itemProp="image"
         src={image}
         alt={title}
         loading="lazy"
@@ -29,28 +34,37 @@ export const ProductCard = ({ product, onAddToCart }: Props) => {
       />
 
       <div className="flex flex-col justify-between gap-4 p-2">
-        <h3 className="line-clamp-2 h-12 text-lg font-bold leading-6">
+        <h3
+          itemProp="name"
+          className="line-clamp-2 h-12 text-lg font-bold leading-6"
+        >
           {title}
         </h3>
 
-        <div className="[&>div>span]:font-bold">
-          <div>
-            Діаметр квітки: <span>{flowerDiameter}</span>
-          </div>
-          <div>
-            Глибина посадки: <span>{plantingDepth}</span>
-          </div>
-          <div>
-            Вік рослини: <span>{size}</span>
-          </div>
-        </div>
+        <ul className="[&>li>span[itemProp='value']]:font-bold">
+          <li itemScope itemType="https://schema.org/PropertyValue">
+            <span itemProp="name">Діаметр квітки</span>:{' '}
+            <span itemProp="value">{flowerDiameter}</span>
+          </li>
 
-        <ul className="flex justify-between gap-2">
+          <li itemScope itemType="https://schema.org/PropertyValue">
+            <span itemProp="name">Глибина посадки</span>:{' '}
+            <span itemProp="value">{plantingDepth}</span>
+          </li>
+
+          <li itemScope itemType="https://schema.org/PropertyValue">
+            <span itemProp="name">Вік рослини</span>:{' '}
+            <span itemProp="value">{size}</span>
+          </li>
+        </ul>
+
+        <ul data-nosnippet className="flex justify-between gap-2">
           {variants.map((variant) => (
             <li key={variant.size} className="grow">
               <button
                 type="button"
-                aria-label="Вибрати вік рослини"
+                aria-label={`Вибрати вік рослини: ${variant.size}`}
+                aria-pressed={variant.size === size}
                 className={clsx(
                   'border-box w-full rounded p-1 font-bold transition-colors',
                   {
@@ -65,18 +79,25 @@ export const ProductCard = ({ product, onAddToCart }: Props) => {
           ))}
         </ul>
 
-        <div className="flex gap-1.5 text-xl font-bold">
-          Ціна:{' '}
-          {discount > 0 ? (
-            <div>
-              {price - discount} грн
-              <span className="ml-1.5 line-through opacity-50">
-                {price} грн
-              </span>
-            </div>
-          ) : (
-            <div>{price} грн</div>
+        <div
+          itemScope
+          itemProp="offers"
+          itemType="https://schema.org/Offer"
+          className="flex gap-1.5 text-xl font-bold"
+        >
+          <div>
+            Ціна: <span itemProp="price">{price - discount}</span> грн
+          </div>
+
+          {discount > 0 && (
+            <span className="line-through opacity-50">{price} грн</span>
           )}
+
+          <meta itemProp="priceCurrency" content="UAH" />
+          <link
+            itemProp="availability"
+            href={`https://schema.org/${inStock ? 'InStock' : 'OutOfStock'}`}
+          />
         </div>
 
         <Button
