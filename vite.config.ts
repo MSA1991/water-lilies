@@ -11,6 +11,10 @@ declare module '@remix-run/node' {
 }
 
 export default defineConfig({
+  build: {
+    cssMinify: 'lightningcss',
+    minify: 'terser',
+  },
   plugins: [
     remix({
       future: {
