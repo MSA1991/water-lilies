@@ -1,17 +1,20 @@
-export enum PageSectionsId {
-  Home = 'home',
-  About = 'about',
-  Catalog = 'catalog',
-  Delivery = 'delivery',
-  Faq = 'faq',
-  Contacts = 'contacts',
-}
+export const PageSectionsId = {
+  Home: 'home',
+  About: 'about',
+  Catalog: 'catalog',
+  Delivery: 'delivery',
+  Faq: 'faq',
+  Contacts: 'contacts',
+} as const;
 
-export type NavigationSections = Exclude<PageSectionsId, PageSectionsId.Home>;
+export type NavSections = Exclude<
+  (typeof PageSectionsId)[keyof typeof PageSectionsId],
+  typeof PageSectionsId.Home
+>;
 
-export type PageSections = {
-  id: NavigationSections;
+export type VisibleSection = NavSections | null;
+
+export type SectionLink = {
+  id: NavSections;
   label: string;
 };
-
-export type SectionLinks = NavigationSections | null;

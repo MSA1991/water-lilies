@@ -1,6 +1,6 @@
-import { PageSections, PageSectionsId } from '~/types/PageSections';
+import { PageSectionsId, SectionLink } from '~/types/PageSections';
 
-export const PAGE_SECTIONS: PageSections[] = [
+export const PAGE_SECTION_LINKS: SectionLink[] = [
   { id: PageSectionsId.About, label: 'Про німфеї' },
   { id: PageSectionsId.Catalog, label: 'Каталог' },
   { id: PageSectionsId.Delivery, label: 'Доставка' },

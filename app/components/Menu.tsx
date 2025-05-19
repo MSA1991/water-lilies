@@ -7,7 +7,7 @@ import { Overlay } from './UI/Overlay';
 
 import { useLockScroll } from '~/hooks/useLockScroll';
 import { useSectionsOffset } from '~/store/sectionsOffset';
-import { PAGE_SECTIONS } from '~/data/pageSections';
+import { PAGE_SECTION_LINKS } from '~/data/pageSectionLinks';
 import { PageSectionsId } from '~/types/PageSections';
 
 type Props = {
@@ -50,7 +50,7 @@ export const Menu = ({ isOpen, onToggle }: Props) => {
           </button>
 
           <ul className="flex flex-col items-center gap-5">
-            {PAGE_SECTIONS.map(({ id, label }, i) => {
+            {PAGE_SECTION_LINKS.map(({ id, label }, i) => {
               const isFooter = PageSectionsId.Contacts === id;
               const currentOffset = isFooter ? footerOffset : sectionOffset;
 

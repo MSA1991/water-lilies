@@ -10,7 +10,7 @@ import { NavLinks } from './NavLinks';
 
 import { useCart } from '~/store/cart';
 import { useDebounce } from '~/hooks/useDebounce';
-import { PageSectionsId, SectionLinks } from '../types/PageSections';
+import { PageSectionsId, VisibleSection } from '../types/PageSections';
 
 const Menu = lazy(() =>
   import('./Menu').then((module) => ({ default: module.Menu })),
@@ -20,7 +20,7 @@ const Cart = lazy(() =>
 );
 
 export const Navigation = () => {
-  const [activeLinkId, setActiveLinkId] = useState<SectionLinks>(null);
+  const [activeLinkId, setActiveLinkId] = useState<VisibleSection>(null);
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
   const [isHydrated, setIsHydrated] = useState<boolean>(false);
   const openCart = useCart.use.openCart();
@@ -34,7 +34,7 @@ export const Navigation = () => {
     setIsOpenMenu((_isOpenMenu) => !_isOpenMenu);
   };
 
-  const onChangeActiveLink = (id: SectionLinks) => {
+  const onChangeActiveLink = (id: VisibleSection) => {
     if (id === activeLinkId) return;
 
     setActiveLinkId(id);

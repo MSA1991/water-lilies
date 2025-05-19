@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import type {
   ActionFunctionArgs,
   HeadersFunction,
@@ -78,7 +78,7 @@ export default function Index() {
 
   const debouncedChangeOffset = useDebounce(onChangeOffset, 300);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     onChangeOffset();
 
     window.addEventListener('resize', debouncedChangeOffset);

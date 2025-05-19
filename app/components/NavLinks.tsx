@@ -3,12 +3,12 @@ import { AnimatePresence } from 'motion/react';
 import * as m from 'motion/react-client';
 
 import { useSectionsOffset } from '~/store/sectionsOffset';
-import { PAGE_SECTIONS } from '~/data/pageSections';
-import { PageSectionsId, SectionLinks } from '../types/PageSections';
+import { PAGE_SECTION_LINKS } from '~/data/pageSectionLinks';
+import { PageSectionsId, VisibleSection } from '../types/PageSections';
 
 type Props = {
-  activeLinkId: PageSectionsId | null;
-  onChangeActiveLink: (id: SectionLinks) => void;
+  activeLinkId: VisibleSection;
+  onChangeActiveLink: (id: VisibleSection) => void;
 };
 
 export const NavLinks = ({ activeLinkId, onChangeActiveLink }: Props) => {
@@ -17,7 +17,7 @@ export const NavLinks = ({ activeLinkId, onChangeActiveLink }: Props) => {
 
   return (
     <ul className="flex gap-7">
-      {PAGE_SECTIONS.map(({ id, label }) => {
+      {PAGE_SECTION_LINKS.map(({ id, label }) => {
         const isFooter = PageSectionsId.Contacts === id;
         const currentOffset = isFooter ? footerOffset : sectionOffset;
 
