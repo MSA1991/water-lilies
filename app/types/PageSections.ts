@@ -7,7 +7,7 @@ export const PageSectionsId = {
   Contacts: 'contacts',
 } as const;
 
-export type NavSections = Exclude<
+type NavSections = Exclude<
   (typeof PageSectionsId)[keyof typeof PageSectionsId],
   typeof PageSectionsId.Home
 >;

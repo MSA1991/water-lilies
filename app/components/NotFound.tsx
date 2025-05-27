@@ -33,7 +33,7 @@ export const NotFound = () => (
 
       <p className="text-2xl md:text-4xl lg:text-6xl">Сторінку не знайдено</p>
 
-      <Link to="/" className="button max-w-48" prefetch="intent">
+      <Link to="/" className="button-link" prefetch="intent">
         на головну
       </Link>
     </div>

@@ -17,12 +17,12 @@ export const ParallaxImage = () => (
     <MouseParallaxChild
       factorX={0.3}
       factorY={0.5}
-      className="absolute left-0 top-0 z-10"
+      className="absolute inset-0 z-10"
     >
       <picture>
         <source
           srcSet={flowerMobile}
-          media="(max-width: 640px)"
+          media="(max-width: 1023px)"
           type="image/webp"
         />
 
@@ -40,7 +40,7 @@ export const ParallaxImage = () => (
       <picture>
         <source
           srcSet={leafMobile}
-          media="(max-width: 640px)"
+          media="(max-width: 1023px)"
           type="image/webp"
         />
 

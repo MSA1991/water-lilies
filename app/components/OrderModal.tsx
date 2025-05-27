@@ -1,76 +1,67 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useActionData } from '@remix-run/react';
 import * as m from 'motion/react-m';
 import { CgClose } from 'react-icons/cg';
 import { FaCheck } from 'react-icons/fa';
 import { FaRegFaceFrown } from 'react-icons/fa6';
-import { clsx } from 'clsx';
 
 import { OrderForm } from './OrderForm';
 
 import { useCart } from '~/store/cart';
+import { useOverlay } from '~/store/overlay';
 import { OrderFormResponse } from '~/types/OrderFormData';
 
-type Props = {
-  isOpen: boolean;
-  onClose: () => void;
-};
-
-const variants = {
-  visible: { scale: 1, display: 'block' },
-  hidden: { scale: 0, display: 'none' },
-};
-
-export const OrderModal = ({ isOpen, onClose }: Props) => {
+export const OrderModal = () => {
   const actionData = useActionData<OrderFormResponse>();
-  const [formState, setFormState] = useState(actionData);
+  const [formData, setFormData] = useState<OrderFormResponse | null>(null);
   const clearCart = useCart.use.clearCart();
+  const toggleOrder = useOverlay.use.toggleOrder();
+  const isFirstRender = useRef<boolean>(true);
 
   useEffect(() => {
-    setFormState(actionData);
+    if (isFirstRender.current) {
+      setFormData(null);
+      isFirstRender.current = false;
+      return;
+    }
 
-    if (actionData?.success) {
+    if (!actionData) return;
+
+    setFormData(actionData);
+
+    if (actionData.success) {
       clearCart();
     }
   }, [actionData, clearCart]);
 
-  const handleCloseModal = () => {
-    onClose();
-    setFormState({});
-  };
-
   return (
-    <div
-      className={clsx('flex-center fixed inset-0 z-50 p-2', {
-        hidden: !isOpen,
-      })}
-    >
+    <div className="fixed left-1/2 top-1/2 z-50 w-full max-w-[500px] -translate-x-1/2 -translate-y-1/2 p-4">
       <m.div
-        initial={false}
-        variants={variants}
-        animate={isOpen ? 'visible' : 'hidden'}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0, transition: { duration: 0.3, ease: 'easeInOut' } }}
         transition={{ type: 'spring', damping: 12 }}
-        className="relative w-full max-w-[500px] rounded-xl bg-white p-4"
+        className="relative rounded-xl bg-white p-4"
       >
         <button
           type="button"
-          onClick={handleCloseModal}
+          onClick={toggleOrder}
           className="absolute right-2 top-2 sm:right-4 sm:top-4"
         >
           <CgClose className="icon" />
         </button>
 
-        {!formState?.success && !formState?.errors?.sendMessage && (
+        {!formData?.success && !formData?.errors?.sendMessage && (
           <>
             <h2 className="title-mb text-center text-xl font-bold sm:text-2xl">
               Оформлення замовлення
             </h2>
 
-            <OrderForm />
+            <OrderForm formErrors={formData?.errors} />
           </>
         )}
 
-        {formState?.success && (
+        {formData?.success && (
           <div className="flex flex-col items-center gap-5 p-10">
             <FaCheck className="h-60 w-60 text-secondary-light" />
 
@@ -82,12 +73,12 @@ export const OrderModal = ({ isOpen, onClose }: Props) => {
           </div>
         )}
 
-        {formState?.errors?.sendMessage && (
+        {formData?.errors?.sendMessage && (
           <div className="flex flex-col items-center gap-5 p-10">
             <FaRegFaceFrown className="h-60 w-60 text-primary-light" />
 
             <p className="text-center text-xl font-bold">
-              {formState.errors.sendMessage}
+              {formData.errors.sendMessage}
             </p>
           </div>
         )}

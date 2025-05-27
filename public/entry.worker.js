@@ -62,62 +62,6 @@ const entryWorker = /* @__PURE__ */ Object.freeze(
     { value: 'Module' },
   ),
 );
-var __getOwnPropNames$3 = Object.getOwnPropertyNames;
-var __commonJS$3 = (cb, mod) =>
-  function __require() {
-    return (
-      mod ||
-        (0, cb[__getOwnPropNames$3(cb)[0]])(
-          (mod = { exports: {} }).exports,
-          mod,
-        ),
-      mod.exports
-    );
-  };
-var require_worker_runtime$3 = __commonJS$3({
-  '@remix-pwa/worker-runtime'(exports, module) {
-    module.exports = {};
-  },
-});
-var worker_runtime_default$3 = require_worker_runtime$3();
-const route0 = /* @__PURE__ */ Object.freeze(
-  /* @__PURE__ */ Object.defineProperty(
-    {
-      __proto__: null,
-      default: worker_runtime_default$3,
-    },
-    Symbol.toStringTag,
-    { value: 'Module' },
-  ),
-);
-var __getOwnPropNames$2 = Object.getOwnPropertyNames;
-var __commonJS$2 = (cb, mod) =>
-  function __require() {
-    return (
-      mod ||
-        (0, cb[__getOwnPropNames$2(cb)[0]])(
-          (mod = { exports: {} }).exports,
-          mod,
-        ),
-      mod.exports
-    );
-  };
-var require_worker_runtime$2 = __commonJS$2({
-  '@remix-pwa/worker-runtime'(exports, module) {
-    module.exports = {};
-  },
-});
-var worker_runtime_default$2 = require_worker_runtime$2();
-const route1 = /* @__PURE__ */ Object.freeze(
-  /* @__PURE__ */ Object.defineProperty(
-    {
-      __proto__: null,
-      default: worker_runtime_default$2,
-    },
-    Symbol.toStringTag,
-    { value: 'Module' },
-  ),
-);
 var __getOwnPropNames$1 = Object.getOwnPropertyNames;
 var __commonJS$1 = (cb, mod) =>
   function __require() {
@@ -136,7 +80,7 @@ var require_worker_runtime$1 = __commonJS$1({
   },
 });
 var worker_runtime_default$1 = require_worker_runtime$1();
-const route2 = /* @__PURE__ */ Object.freeze(
+const route0 = /* @__PURE__ */ Object.freeze(
   /* @__PURE__ */ Object.defineProperty(
     {
       __proto__: null,
@@ -161,7 +105,7 @@ var require_worker_runtime = __commonJS({
   },
 });
 var worker_runtime_default = require_worker_runtime();
-const route3 = /* @__PURE__ */ Object.freeze(
+const route1 = /* @__PURE__ */ Object.freeze(
   /* @__PURE__ */ Object.defineProperty(
     {
       __proto__: null,
@@ -177,6 +121,8 @@ const assets = [
   '/icon512_maskable.png',
   '/icon512_rounded.png',
   '/manifest.json',
+  '/robots.txt',
+  '/sitemap.xml',
   '/screenshots/desktop.webp',
   '/screenshots/mobile.webp',
 ];
@@ -193,30 +139,6 @@ const routes = {
     hasWorkerAction: false,
     module: route0,
   },
-  'routes/sitemap[.]xml': {
-    id: 'routes/sitemap[.]xml',
-    parentId: 'root',
-    path: 'sitemap.xml',
-    index: void 0,
-    caseSensitive: void 0,
-    hasLoader: true,
-    hasAction: false,
-    hasWorkerLoader: false,
-    hasWorkerAction: false,
-    module: route1,
-  },
-  'routes/robots[.]txt': {
-    id: 'routes/robots[.]txt',
-    parentId: 'root',
-    path: 'robots.txt',
-    index: void 0,
-    caseSensitive: void 0,
-    hasLoader: true,
-    hasAction: false,
-    hasWorkerLoader: false,
-    hasWorkerAction: false,
-    module: route2,
-  },
   'routes/_index': {
     id: 'routes/_index',
     parentId: 'root',
@@ -227,7 +149,7 @@ const routes = {
     hasAction: true,
     hasWorkerLoader: false,
     hasWorkerAction: false,
-    module: route3,
+    module: route1,
   },
 };
 const entry = { module: entryWorker };

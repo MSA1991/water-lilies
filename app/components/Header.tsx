@@ -46,7 +46,7 @@ export const Header = () => {
               offset={sectionOffset}
               duration={300}
               isDynamic={true}
-              className="button"
+              className="button-link"
             >
               замовити
             </ScrollLink>

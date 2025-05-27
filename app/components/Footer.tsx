@@ -22,7 +22,7 @@ export const Footer = () => (
       <div className="flex w-full flex-col gap-5 text-lg font-bold sm:w-2/3 md:w-1/2 md:gap-7 md:text-xl lg:text-2xl">
         <h2 className="section-title">Контакти</h2>
 
-        <ul className="flex flex-col gap-2">
+        <ul className="flex flex-col gap-1 md:gap-2">
           <li>
             Телефон:{' '}
             <a href="tel:+380666915982" className="text-primary-hover">

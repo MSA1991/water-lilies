@@ -1,12 +1,10 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+
 import { createSelectors } from '~/utils/createSelectors';
 import { CartProduct } from '~/types/Product';
 
 type CartStore = {
-  isOpen: boolean;
-  openCart: () => void;
-  closeCart: () => void;
   products: CartProduct[];
   clearCart: () => void;
   addProduct: (product: CartProduct) => void;
@@ -15,13 +13,11 @@ type CartStore = {
   decreaseQuantity: (title: string) => void;
 };
 
+const PRODUCT_ORDER_LIMIT = 5;
+
 const cartStore = create<CartStore>()(
   persist(
     (set) => ({
-      isOpen: false,
-      openCart: () => set({ isOpen: true }),
-      closeCart: () => set({ isOpen: false }),
-
       products: [],
       clearCart: () => set({ products: [] }),
 
@@ -43,7 +39,7 @@ const cartStore = create<CartStore>()(
       increaseQuantity: (productId) =>
         set((state) => ({
           products: state.products.map((product) =>
-            product.id === productId && product.quantity < 5
+            product.id === productId && product.quantity < PRODUCT_ORDER_LIMIT
               ? { ...product, quantity: product.quantity + 1 }
               : product,
           ),

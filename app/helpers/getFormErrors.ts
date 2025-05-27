@@ -1,8 +1,8 @@
-import { OrderFormData } from '~/types/OrderFormData';
+import { OrderFormErrors, OrderFormData } from '~/types/OrderFormData';
 
 export const getFormErrors = (formData: OrderFormData) => {
   const { firstName, lastName, phone, city, warehouse } = formData;
-  const errors: Record<string, string> = {};
+  const errors: OrderFormErrors = {};
 
   if (!firstName) errors.firstName = 'Введіть ім`я';
   if (!lastName) errors.lastName = 'Введіть прізвище';
