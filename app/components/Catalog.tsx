@@ -14,15 +14,13 @@ export const Catalog = ({ products }: Props) => {
   const addProductToCart = useCart.use.addProduct();
 
   const handleAddToCart = (product: Product, variant: ProductVariants) => {
-    const newProduct = {
+    addProductToCart({
       id: crypto.randomUUID(),
       title: product.title,
       image: product.image,
       variant,
       quantity: 1,
-    };
-
-    addProductToCart(newProduct);
+    });
   };
 
   return (

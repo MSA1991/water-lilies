@@ -36,7 +36,7 @@ export const Delivery = () => {
             offset={footerOffset}
             duration={300}
             isDynamic={true}
-            className="button max-w-48"
+            className="button-link"
           >
             контакти
           </ScrollLink>

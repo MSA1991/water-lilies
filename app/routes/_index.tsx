@@ -14,6 +14,7 @@ import { Catalog } from '~/components/Catalog';
 import { Delivery } from '~/components/Delivery';
 import { Faq } from '~/components/Faq';
 import { Footer } from '~/components/Footer';
+import { Overlay } from '~/components/Overlay';
 
 import { metaTags } from '~/metaTags';
 import { useSectionsOffset } from '~/store/sectionsOffset';
@@ -55,7 +56,7 @@ export async function action({ request }: ActionFunctionArgs) {
   return data({ success: true });
 }
 
-const SCROLL_OFFSET_RATIO = 0.25;
+const SCROLL_OFFSET_RATIO = 0.2;
 
 export default function Index() {
   const products = useLoaderData<typeof loader>();
@@ -100,6 +101,7 @@ export default function Index() {
         <Faq />
       </main>
       <Footer />
+      <Overlay />
     </LazyMotion>
   );
 }

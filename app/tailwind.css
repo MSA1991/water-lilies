@@ -46,36 +46,20 @@
 }
 
 @layer components {
-  .scroll-hidden {
-    scrollbar-width: none;
-  }
-
   .section-title {
     @apply text-xl font-bold md:text-2xl lg:text-3xl;
-  }
-
-  .title-mb {
-    @apply mb-5 md:mb-7;
   }
 
   .section-bg {
     @apply bg-secondary-light ring-2 ring-secondary;
   }
 
-  .section-py {
-    @apply py-14 md:py-16 lg:py-28;
-  }
-
-  .flex-center {
-    @apply flex items-center justify-center;
-  }
-
   .button {
     @apply flex-center h-11 w-full cursor-pointer rounded-lg bg-primary text-base font-bold uppercase tracking-wider text-[#FFF] shadow-xl transition-all hover:bg-primary-light hover:tracking-widest;
   }
 
-  .text-primary-hover {
-    @apply text-primary transition-colors hover:text-primary-light;
+  .button-link {
+    @apply button max-w-48;
   }
 
   .icon {
@@ -86,16 +70,38 @@
     @apply text-primary-hover h-8 w-8;
   }
 
-  .border-box {
-    @apply border-2 border-secondary;
+  .input {
+    @apply w-full rounded-md border-2 border-secondary-light bg-white p-2 transition-colors focus:border-secondary focus:outline-none sm:px-4;
+  }
+}
+
+@layer utilities {
+  .scroll-hidden {
+    scrollbar-width: none;
   }
 
   .container-sm {
     @apply mx-auto max-w-screen-lg;
   }
 
-  .input {
-    @apply w-full rounded-md border-2 border-secondary-light bg-white p-2 transition-colors focus:border-secondary focus:outline-none sm:px-4;
+  .title-mb {
+    @apply mb-5 md:mb-7;
+  }
+
+  .section-py {
+    @apply py-14 md:py-16 lg:py-28;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .text-primary-hover {
+    @apply text-primary transition-colors hover:text-primary-light;
+  }
+
+  .border-box {
+    @apply border-2 border-secondary;
   }
 
   .drop-shadow-white {

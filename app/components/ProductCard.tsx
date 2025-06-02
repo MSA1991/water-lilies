@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
-
 import { Button } from './UI/Button';
-
 import { Product, ProductVariants } from '~/types/Product';
 
 type Props = {
@@ -14,10 +12,6 @@ export const ProductCard = ({ product, onAddToCart }: Props) => {
   const { image, title, flowerDiameter, plantingDepth, variants } = product;
   const [activeVariant, setActiveVariant] = useState(variants[0]);
   const { size, discount, price, inStock } = activeVariant;
-
-  const handleChangeActiveVariant = (variant: ProductVariants) => {
-    setActiveVariant(variant);
-  };
 
   return (
     <article
@@ -71,7 +65,7 @@ export const ProductCard = ({ product, onAddToCart }: Props) => {
                     'bg-secondary text-white': variant.size === size,
                   },
                 )}
-                onClick={() => handleChangeActiveVariant(variant)}
+                onClick={() => setActiveVariant(variant)}
               >
                 {variant.size}
               </button>

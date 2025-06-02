@@ -1,38 +1,18 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import * as m from 'motion/react-m';
-import { AnimatePresence } from 'motion/react';
 import { LuMenu } from 'react-icons/lu';
-import { HiShoppingBag } from 'react-icons/hi2';
 
 import { Logo } from './UI/Logo';
 import { NavLinks } from './NavLinks';
+import { CartIcon } from './CartIcon';
 
-import { useCart } from '~/store/cart';
 import { useDebounce } from '~/hooks/useDebounce';
+import { useOverlay } from '~/store/overlay';
 import { PageSectionsId, VisibleSection } from '../types/PageSections';
-
-const Menu = lazy(() =>
-  import('./Menu').then((module) => ({ default: module.Menu })),
-);
-const Cart = lazy(() =>
-  import('./Cart').then((module) => ({ default: module.Cart })),
-);
 
 export const Navigation = () => {
   const [activeLinkId, setActiveLinkId] = useState<VisibleSection>(null);
-  const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
-  const [isHydrated, setIsHydrated] = useState<boolean>(false);
-  const openCart = useCart.use.openCart();
-  const productsCart = useCart.use.products();
-
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
-  const handleToggleMenu = () => {
-    setIsOpenMenu((_isOpenMenu) => !_isOpenMenu);
-  };
+  const toggleMenu = useOverlay.use.toggleMenu();
 
   const onChangeActiveLink = (id: VisibleSection) => {
     if (id === activeLinkId) return;
@@ -50,7 +30,7 @@ export const Navigation = () => {
             aria-label="відкрити меню"
             type="button"
             className="md:hidden"
-            onClick={handleToggleMenu}
+            onClick={toggleMenu}
           >
             <LuMenu className="icon-lg drop-shadow-white" />
           </button>
@@ -77,47 +57,9 @@ export const Navigation = () => {
             />
           </div>
 
-          <div className="relative">
-            <button
-              aria-label="відкрити кошик"
-              type="button"
-              className="block"
-              onClick={openCart}
-            >
-              <HiShoppingBag className="icon-lg drop-shadow-white" />
-            </button>
-
-            <AnimatePresence>
-              {!!productsCart.length && (
-                <m.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  exit={{
-                    scale: 0,
-                    transition: { duration: 0.3, ease: 'easeInOut' },
-                  }}
-                  transition={{ type: 'spring' }}
-                  className="flex-center absolute -right-2 -top-2 h-5 w-5 rounded-full bg-secondary text-white"
-                >
-                  {productsCart.length}
-                </m.div>
-              )}
-            </AnimatePresence>
-          </div>
+          <CartIcon />
         </div>
       </nav>
-
-      {isHydrated && (
-        <>
-          <Suspense fallback={null}>
-            <Menu isOpen={isOpenMenu} onToggle={handleToggleMenu} />
-          </Suspense>
-
-          <Suspense fallback={null}>
-            <Cart />
-          </Suspense>
-        </>
-      )}
     </>
   );
 };

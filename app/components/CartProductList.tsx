@@ -1,8 +1,6 @@
 import * as m from 'motion/react-m';
 import { AnimatePresence } from 'motion/react';
-
 import { CartProduct } from './CartProduct';
-
 import { CartProduct as CartProductType } from '~/types/Product';
 
 type Props = {

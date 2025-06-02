@@ -9,14 +9,16 @@ export type OrderFormData = {
   cart: CartProduct[];
 };
 
+export type OrderFormErrors = {
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
+  city?: string;
+  warehouse?: string;
+  sendMessage?: string;
+};
+
 export type OrderFormResponse = {
   success?: boolean;
-  errors?: {
-    firstName?: string;
-    lastName?: string;
-    phone?: string;
-    city?: string;
-    warehouse?: string;
-    sendMessage?: string;
-  };
+  errors?: OrderFormErrors;
 };

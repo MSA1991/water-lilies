@@ -59,8 +59,7 @@ export const SearchWarehouses = ({ searchedCity, error }: Props) => {
   return (
     <div className="relative">
       <label>
-        Відділення:{' '}
-        {error && <span className="text-primary">{`(${error})`}</span>}
+        Відділення: {error && <span>{`(${error})`}</span>}
         <input
           type="text"
           name="warehouse"

@@ -49,8 +49,7 @@ export const SearchCities = ({ onChangeSearchedCity, error }: Props) => {
   return (
     <div className="relative">
       <label>
-        Місто доставки:{' '}
-        {error && <span className="text-primary">{`(${error})`}</span>}
+        Місто доставки: {error && <span>{`(${error})`}</span>}
         <input
           type="text"
           name="city"
