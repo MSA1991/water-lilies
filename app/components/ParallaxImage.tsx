@@ -29,7 +29,7 @@ export const ParallaxImage = () => (
         <img
           src={flower}
           className="h-auto w-full"
-          alt="квітка водяної лілії"
+          alt="водяная лилия"
           width="860"
           height="860"
         />
@@ -47,7 +47,7 @@ export const ParallaxImage = () => (
         <img
           src={leaf}
           className="h-auto w-full"
-          alt="листок водяної лілії"
+          alt="нимфея"
           width="860"
           height="860"
         />
